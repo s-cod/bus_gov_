@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<reportActivityResult xmlns="http://bus.gov.ru/external/1" xmlns:ns2="http://bus.gov.ru/types/1">
+    <header xmlns="http://bus.gov.ru/types/1">
+        <id>dabca2e1-b371-496d-9171-e3293c1d736a</id>
+        <createDateTime>2026-03-27T15:11:46</createDateTime>
+    </header>
+    <body>
+        <position>
+            <ns2:positionId>af24aeda-8749-497c-8f90-046a0571229a</ns2:positionId>
+            <ns2:changeDate>2026-03-27T15:11:46</ns2:changeDate>
+            <placer xmlns="http://bus.gov.ru/types/1">
+                <regNum>523D2025</regNum>
+                <fullName>МБОУ &amp;#34;Чучкинская основная общеобразовательная школа&amp;#34;
+                    Горьковского района Омской области</fullName>
+                <inn>5512004688</inn>
+                <kpp>551201001</kpp>
+            </placer>
+            <initiator xmlns="http://bus.gov.ru/types/1">
+                <regNum>523D1347</regNum>
+                <fullName>Комитет по образованию администрации Горьковского района Омской области</fullName>
+                <inn>5501290035</inn>
+                <kpp>550101001</kpp>
+            </initiator>
+            <ns2:versionNumber>1</ns2:versionNumber>
+            <signerDetails xmlns="http://bus.gov.ru/types/1">
+                <managerName>Агейкина Н. А.</managerName>
+                <managerPosition>Главный бухгалтер</managerPosition>
+                <executorName>Агейкина Н. А.</executorName>
+                <executorPosition>Главный бухгалтер</executorPosition>
+                <phone>83815721153</phone>
+                <signDate>2026-03-27</signDate>
+                <signerDetailsType>PAYMENTS_AND_RECEIPTS</signerDetailsType>
+            </signerDetails>
+            <ns2:reportMonth>Январь</ns2:reportMonth>
+            <ns2:reportYearShort>2026</ns2:reportYearShort>
+            <ns2:agencyTypeCode>02</ns2:agencyTypeCode>
+            <ns2:founderAgencyName>Комитет по образованию администрации Горьковского района Омской
+                области</ns2:founderAgencyName>
+            <ns2:glavaCode>704</ns2:glavaCode>
+            <ns2:ppoName>ppoName1</ns2:ppoName>
+            <ns2:oktmoCode>52509000147</ns2:oktmoCode>
+            <ns2:reportYear>2026</ns2:reportYear>
+            <ns2:confirmDate>2026-03-27</ns2:confirmDate>
+            <result xmlns="http://bus.gov.ru/types/1">
+                <receiptsAndPayments>
+                    <receipts>
+                        <name>Субсидии на финансовое обеспечение выполнения государственного
+                            (муниципального) задания</name>
+                        <lineCode>0100</lineCode>
+                        <receiptsTotal>80</receiptsTotal>
+                        <reportingFinancialYear>40</reportingFinancialYear>
+                        <precedingFinancialYear>40</precedingFinancialYear>
+                        <change>0</change>
+                        <totalAmountShare>100</totalAmountShare>
+                    </receipts>
+                    <payments>
+                        <name>Оплата труда и компенсационные выплаты работникам</name>
+                        <lineCode>0100</lineCode>
+                        <paymentsTotal>4870038.51</paymentsTotal>
+                        <paymentsTotalShare>59.31</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>4524799.82</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>55.11</paymentsTotalShare6>
+                        <financialSupportSubsidiesOther>345238.69</financialSupportSubsidiesOther>
+                        <paymentsTotalShare8>4.2</paymentsTotalShare8>
+                        <grantSubsidiesStateBudget>0</grantSubsidiesStateBudget>
+                        <paymentsTotalShare10>0</paymentsTotalShare10>
+                        <grantSubsidiesStateBudgetSubject>0</grantSubsidiesStateBudgetSubject>
+                        <paymentsTotalShare12>0</paymentsTotalShare12>
+                        <financialSupportOms>0</financialSupportOms>
+                        <paymentsTotalShare14>0</paymentsTotalShare14>
+                        <financialSupportIncomeActivitiesTotal>0</financialSupportIncomeActivitiesTotal>
+                        <paymentsTotalShare16>0</paymentsTotalShare16>
+                        <fundsIncome>0</fundsIncome>
+                        <paymentsTotalShare18>0</paymentsTotalShare18>
+                        <fundsIncomeGratuitousReceipts>0</fundsIncomeGratuitousReceipts>
+                        <paymentsTotalShare20>0</paymentsTotalShare20>
+                    </payments>
+                </receiptsAndPayments>
+                <nonFinancialAssetsChange></nonFinancialAssetsChange>
+                <numberEmployeesRemuneration>
+                    <numberEmployeesRemunerationGroups>
+                        <groupStaff>
+                            <name>9000</name>
+                            <lineCode>9000</lineCode>
+                        </groupStaff>
+                        <numberEmployeesRemunerationGroup>
+                            <name>Основные</name>
+                            <groupStaff>
+                                <name>1000</name>
+                                <lineCode>1000</lineCode>
+                            </groupStaff>
+                            <employees>
+                                <staffingStartYear>
+                                    <staffingTotal>8.08</staffingTotal>
+                                    <staffingBase>8.08</staffingBase>
+                                    <replaced>8.08</replaced>
+                                    <vacancy>0</vacancy>
+                                </staffingStartYear>
+                                <averageOfYear>
+                                    <total>4</total>
+                                    <base>4</base>
+                                    <mainPlace>4</mainPlace>
+                                    <insidePartTme>0</insidePartTme>
+                                    <outsidePartTime>0</outsidePartTime>
+                                </averageOfYear>
+                                <contracts>
+                                    <employees>0</employees>
+                                    <notEmployees>0</notEmployees>
+                                </contracts>
+                                <staffingEndYear>
+                                    <staffingTotal>6.52</staffingTotal>
+                                    <staffingBase>6.52</staffingBase>
+                                    <replaced>6.52</replaced>
+                                    <vacancy>0</vacancy>
+                                </staffingEndYear>
+                            </employees>
+                            <salary>
+                                <salaryFund>
+                                    <total>3301675.3</total>
+                                    <base>3301675.3</base>
+                                    <baseFullTime>3301675.3</baseFullTime>
+                                    <mainPartTme>0</mainPartTme>
+                                    <insideCombining>0</insideCombining>
+                                    <outside>0</outside>
+                                </salaryFund>
+                                <accrued>
+                                    <employees>0</employees>
+                                    <notEmployees>0</notEmployees>
+                                </accrued>
+                                <salaryAnalytic>
+                                    <baseWorkplace>
+                                        <subsidiesContract>2568305.80</subsidiesContract>
+                                        <subsidiesOther>733369.50</subsidiesOther>
+                                        <subsidiesGrantFederal>0</subsidiesGrantFederal>
+                                        <subsidiesGrantRegional>0</subsidiesGrantRegional>
+                                        <oms>0</oms>
+                                        <incomeActivities>0</incomeActivities>
+                                    </baseWorkplace>
+                                    <insideCombining>
+                                        <subsidiesContract>0</subsidiesContract>
+                                        <subsidiesOther>0</subsidiesOther>
+                                        <subsidiesGrantFederal>0</subsidiesGrantFederal>
+                                        <subsidiesGrantRegional>0</subsidiesGrantRegional>
+                                        <oms>0</oms>
+                                        <incomeActivities>0</incomeActivities>
+                                    </insideCombining>
+                                    <outsideWorkplace>
+                                        <subsidiesContract>0</subsidiesContract>
+                                        <subsidiesOther>0</subsidiesOther>
+                                        <subsidiesGrantFederal>0</subsidiesGrantFederal>
+                                        <subsidiesGrantRegional>0</subsidiesGrantRegional>
+                                        <oms>0</oms>
+                                        <incomeActivities>0</incomeActivities>
+                                    </outsideWorkplace>
+                                    <employeesContract>
+                                        <subsidiesContract>0</subsidiesContract>
+                                        <subsidiesOther>0</subsidiesOther>
+                                        <subsidiesGrantFederal>0</subsidiesGrantFederal>
+                                        <subsidiesGrantRegional>0</subsidiesGrantRegional>
+                                        <oms>0</oms>
+                                        <incomeActivities>0</incomeActivities>
+                                    </employeesContract>
+                                    <notEmployeesContract>
+                                        <subsidiesContract>0</subsidiesContract>
+                                        <subsidiesOther>0</subsidiesOther>
+                                        <subsidiesGrantFederal>0</subsidiesGrantFederal>
+                                        <subsidiesGrantRegional>0</subsidiesGrantRegional>
+                                        <oms>0</oms>
+                                        <incomeActivities>0</incomeActivities>
+                                    </notEmployeesContract>
+                                </salaryAnalytic>
+                            </salary>
+                        </numberEmployeesRemunerationGroup>
+                        <employees></employees>
+                        <salary></salary>
+                    </numberEmployeesRemunerationGroups>
+                </numberEmployeesRemuneration>
+                <openedCreditAccounts>
+                    <CreditAccountsRF></CreditAccountsRF>
+                    <CreditAccountsCurrency></CreditAccountsCurrency>
+                </openedCreditAccounts>
+            </result>
+            <assetsUse xmlns="http://bus.gov.ru/types/1"></assetsUse>
+            <effectiveActivity xmlns="http://bus.gov.ru/types/1"></effectiveActivity>
+        </position>
+    </body>
+</reportActivityResult>
