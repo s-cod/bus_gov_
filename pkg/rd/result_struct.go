@@ -75,10 +75,12 @@ type Result struct {
 	Xmlns                       string   `xml:"xmlns,attr"`
 	ReceiptsAndPayments         ReceiptsAndPayments
 	NonFinancialAssetsChange    NonFinancialAssetsChange
+	CreditPayment               []CreditPayment
 	NumberEmployeesRemuneration NumberEmployeesRemuneration
 	OpenedCreditAccounts        OpenedCreditAccounts
 }
 
+// Сведения о поступлениях и выплатах учреждения
 type ReceiptsAndPayments struct {
 	XMLName  xml.Name `xml:"receiptsAndPayments"`
 	Receipts []Receipts
@@ -119,21 +121,46 @@ type Payments struct {
 	PaymentsTotalShare20                  string   `xml:"paymentsTotalShare20"`
 }
 
+// Сведения об оказываемых услугах, выполняемых работах сверх установленного
+// государственного (муниципального) задания, а также выпускаемой продукции»
 type NonFinancialAssetsChange struct {
 	XMLName xml.Name `xml:"nonFinancialAssetsChange"`
 }
 
-type NumberEmployeesRemuneration struct {
-	XMLName                           xml.Name `xml:"numberEmployeesRemuneration"`
-	NumberEmployeesRemunerationGroups NumberEmployeesRemunerationGroups
+// Сведения о кредиторской задолженности и обязательствах учреждения
+type CreditPayment struct {
+	XMLName                                    xml.Name `xml:"creditPayment"`
+	Name                                       string   `xml:"name"`
+	LineCode                                   string   `xml:"lineCode"`
+	CreditPaymentStartYearTotal                string   `xml:"creditPaymentStartYearTotal"`
+	CreditPaymentStartYearDedlineReportingYear string   `xml:"creditPaymentStartYearDedlineReportingYear"`
+	CreditPaymentEndYearTotal                  string   `xml:"creditPaymentEndYearTotal"`
+	CreditPaymentEndYearTotalQuarter1          string   `xml:"creditPaymentEndYearTotalQuarter1"`
+	CreditPaymentEndYearTotalJanuary           string   `xml:"creditPaymentEndYearTotalJanuary"`
+	CreditPaymentEndYearTotalQuarter2          string   `xml:"creditPaymentEndYearTotalQuarter2"`
+	CreditPaymentEndYearTotalQuarter3          string   `xml:"creditPaymentEndYearTotalQuarter3"`
+	CreditPaymentEndYearTotalQuarter4          string   `xml:"creditPaymentEndYearTotalQuarter4"`
+	CreditPaymentEndYearTotalNextYear          string   `xml:"creditPaymentEndYearTotalNextYear"`
+	AmountDeferredTotal                        string   `xml:"amountDeferredTotal"`
+	AmountDeferredSalary                       string   `xml:"amountDeferredSalary"`
+	AmountDeferredClaims                       string   `xml:"amountDeferredClaims"`
+	AmountDeferredNotReceived                  string   `xml:"amountDeferredNotReceived"`
+	AmountDeferredOther                        string   `xml:"amountDeferredOther"`
 }
 
+//  Сведения о численности сотрудников и оплате
+type NumberEmployeesRemuneration struct {
+	XMLName                           xml.Name `xml:"numberEmployeesRemuneration"`
+	NumberEmployeesRemunerationGroups []NumberEmployeesRemunerationGroups
+}
+
+// Сведения о численности и оплате труда по
 type NumberEmployeesRemunerationGroups struct {
-	XMLName                          xml.Name `xml:"numberEmployeesRemunerationGroups"`
-	GroupStaff                       GroupStaff
-	NumberEmployeesRemunerationGroup []NumberEmployeesRemunerationGroup
-	Employees                        string `xml:"employees"`
-	Salary                           string `xml:"salary"`
+	XMLName    xml.Name `xml:"numberEmployeesRemunerationGroups"`
+	GroupStaff GroupStaff
+	// NumberEmployeesRemunerationGroup []NumberEmployeesRemunerationGroup
+	Employees Employees
+	Salary    Salary
 }
 
 type GroupStaff struct {
@@ -142,6 +169,8 @@ type GroupStaff struct {
 	LineCode string   `xml:"lineCode"`
 }
 
+//ведения о численности и оплате труда по
+// группам сотрудников
 type NumberEmployeesRemunerationGroup struct {
 	XMLName    xml.Name `xml:"numberEmployeesRemunerationGroup"`
 	Name       string   `xml:"name"`

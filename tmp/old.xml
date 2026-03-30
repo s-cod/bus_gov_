@@ -1547,7 +1547,8 @@
                         </indexes>
                     </service>
                 </reports> -->
-                <receiptsAndPayments> <!-- Сведения о поступлениях и выплатах учреждения-->
+                <receiptsAndPayments> <!-- Сведения о
+                    поступлениях и выплатах учреждения-->
                     <receipts> <!-- Сведения о поступления х учреждения-->
                         <name>Субсидии на финансовое обеспечение выполнения государственного
                             (муниципального) задания</name>
@@ -1677,8 +1678,8 @@
                     60</received>
                     <arrearsEndYear>60</arrearsEndYear>
                 </financialAssetsChange>-->
-                <!-- <creditPayment>
-                    Сведения о кредиторской задолженности и обязательствах учреждения
+                <creditPayment>
+                    <!-- Сведения о кредиторской задолженности и обязательствах учреждения -->
                     <name>name1</name>
                     <lineCode>4444</lineCode>
                     <creditPaymentStartYearTotal>60</creditPaymentStartYearTotal>
@@ -1695,7 +1696,7 @@
                     <amountDeferredClaims>60</amountDeferredClaims>
                     <amountDeferredNotReceived>60</amountDeferredNotReceived>
                     <amountDeferredOther>60</amountDeferredOther>
-                </creditPayment> -->
+                </creditPayment>
                 <!-- <overdueCreditPayment>
                     Сведения о просроченной кредиторской задолженности
                     <name>name1</name>
@@ -2008,7 +2009,7 @@
                             </salary>
                         </numberEmployeesRemunerationGroup>
                         <employees>
-                            <!-- <staffingStartYear>
+                            <staffingStartYear>
                                 <staffingTotal>60.0000000000</staffingTotal>
                                 <staffingBase>60.0000000000</staffingBase>
                                 <replaced>60.0000000000</replaced>
@@ -2030,7 +2031,7 @@
                                 <staffingBase>60.0000000000</staffingBase>
                                 <replaced>60.0000000000</replaced>
                                 <vacancy>60.0000000000</vacancy>
-                            </staffingEndYear> -->
+                            </staffingEndYear>
                         </employees>
                         <salary>
                             <!-- <salaryFund>
@@ -2136,9 +2137,8 @@
                 </openedCreditAccounts>
             </result>
             <assetsUse xmlns="http://bus.gov.ru/types/1"> <!-- Раздел 2. Использование имущества-->
-                <!-- <estateExceptLand> Сведения о недвижимом имуществе, за исключение м земельных
-                    участков, закрепленно м на праве оперативног о управления
-                    <estateExceptLandObjects>
+                <estateExceptLand>
+                    <!-- Сведения о недвижимом имуществе, за исключение м земельных --> участков, закрепленно м на праве оперативног о управления <estateExceptLandObjects>
                         <typeObject>
                             <type>1000</type>
                             <lineCode>1000</lineCode>
@@ -2198,117 +2198,7 @@
                                 <total>60</total>
                             </actualExpenses>
                         </estateObject>
-                        <estateObject>
-                            <name>name2</name>
-                            <address>address2</address>
-                            <cadNumber>cadNumber2</cadNumber>
-                            <oktmo>
-                                <code>00000000</code>
-                                <name>name2</name>
-                            </oktmo>
-                            <uniqueObjectCode>uniqueObjectCode2</uniqueObjectCode>
-                            <buildingYear>-9999</buildingYear>
-                            <unit>
-                                <code>000</code>
-                                <symbol>symbol2</symbol>
-                            </unit>
-                            <typeObject>
-                                <type>2000</type>
-                                <lineCode>0000</lineCode>
-                            </typeObject>
-                            <used>
-                                <total>20</total>
-                                <mainPurposeTask>20</mainPurposeTask>
-                                <mainPurposeOverTask>20</mainPurposeOverTask>
-                                <otherPurpose>20</otherPurpose>
-                            </used>
-                            <TransferredForTemporaryUse>
-                                <total>20</total>
-                                <rentBased>20</rentBased>
-                                <gratuitousUse>20</gratuitousUse>
-                                <hourlyPayment>20</hourlyPayment>
-                            </TransferredForTemporaryUse>
-                            <notUsed>
-                                <total>20</total>
-                                <underConstraction>20</underConstraction>
-                                <needConstraction>20</needConstraction>
-                                <waitOffs>20</waitOffs>
-                            </notUsed>
-                            <actualExpenses>
-                                <utilities>
-                                    <total>20</total>
-                                    <reimbursedByUsers>20</reimbursedByUsers>
-                                    <unusedProperty>20</unusedProperty>
-                                </utilities>
-                                <propertyMaintenanceServices>
-                                    <total>20</total>
-                                    <reimbursedByUsers>20</reimbursedByUsers>
-                                    <unusedProperty>20</unusedProperty>
-                                </propertyMaintenanceServices>
-                                <propertyTax>
-                                    <total>20</total>
-                                    <reimbursedByUsers>20</reimbursedByUsers>
-                                    <unusedProperty>20</unusedProperty>
-                                </propertyTax>
-                                <total>20</total>
-                            </actualExpenses>
-                        </estateObject>
-                        <estateObject>
-                            <name>name3</name>
-                            <address>address3</address>
-                            <cadNumber>cadNumber3</cadNumber>
-                            <oktmo>
-                                <code>00000000</code>
-                                <name>name3</name>
-                            </oktmo>
-                            <uniqueObjectCode>uniqueObjectCode3</uniqueObjectCode>
-                            <buildingYear>9999</buildingYear>
-                            <unit>
-                                <code>000</code>
-                                <symbol>symbol3</symbol>
-                            </unit>
-                            <typeObject>
-                                <type>3000</type>
-                                <lineCode>0000</lineCode>
-                            </typeObject>
-                            <used>
-                                <total>70</total>
-                                <mainPurposeTask>70</mainPurposeTask>
-                                <mainPurposeOverTask>70</mainPurposeOverTask>
-                                <otherPurpose>70</otherPurpose>
-                            </used>
-                            <TransferredForTemporaryUse>
-                                <total>70</total>
-                                <rentBased>70</rentBased>
-                                <gratuitousUse>70</gratuitousUse>
-                                <hourlyPayment>70</hourlyPayment>
-                            </TransferredForTemporaryUse>
-                            <notUsed>
-                                <total>70</total>
-                                <underConstraction>70</underConstraction>
-                                <needConstraction>70</needConstraction>
-                                <waitOffs>70</waitOffs>
-                            </notUsed>
-                            <actualExpenses>
-                                <utilities>
-                                    <total>70</total>
-                                    <reimbursedByUsers>70</reimbursedByUsers>
-                                    <unusedProperty>70</unusedProperty>
-                                </utilities>
-                                <propertyMaintenanceServices>
-                                    <total>70</total>
-                                    <reimbursedByUsers>70</reimbursedByUsers>
-                                    <unusedProperty>70</unusedProperty>
-                                </propertyMaintenanceServices>
-                                <propertyTax>
-                                    <total>70</total>
-                                    <reimbursedByUsers>70</reimbursedByUsers>
-                                    <unusedProperty>70</unusedProperty>
-                                </propertyTax>
-                                <total>70</total>
-                            </actualExpenses>
-                        </estateObject>
-                        <used>
+                        <!-- <used>
                             <total>60</total>
                             <mainPurposeTask>60</mainPurposeTask>
                             <mainPurposeOverTask>60</mainPurposeOverTask>
@@ -2325,7 +2215,7 @@
                             <underConstraction>60</underConstraction>
                             <needConstraction>60</needConstraction>
                             <waitOffs>60</waitOffs>
-                        </notUsed>
+                        </notUsed> -->
                         <actualExpenses>
                             <utilities>
                                 <total>60</total>
@@ -2346,73 +2236,72 @@
                         </actualExpenses>
                     </estateExceptLandObjects>
                 </estateExceptLand>
-                <landPermanentUse> Сведения о земельных участках, предоставле нных на праве
-                    постоянного (бессрочного ) пользования
-                    <lendObject>
-                    <name>name1</name>
-                    <address>address1</address>
-                    <oktmo>
-                        <code>00000000</code>
+                <landPermanentUse>
+                    <!-- Сведения о земельных участках, предоставле нных на праве --> постоянного (бессрочного ) пользования <lendObject>
                         <name>name1</name>
-                    </oktmo>
-                    <cadNumber>cadNumber1</cadNumber>
-                    <unit>
-                        <code>0000</code>
-                        <symbol>symbol1</symbol>
-                    </unit>
+                        <address>address1</address>
+                        <oktmo>
+                            <code>00000000</code>
+                            <name>name1</name>
+                        </oktmo>
+                        <cadNumber>cadNumber1</cadNumber>
+                        <unit>
+                            <code>0000</code>
+                            <symbol>symbol1</symbol>
+                        </unit>
+                        <lendObjectUse>
+                            <lineCode>0000</lineCode>
+                            <total>60</total>
+                            <used>
+                                <total>60</total>
+                                <mainPurposeTask>60</mainPurposeTask>
+                                <mainPurposeOverTask>60</mainPurposeOverTask>
+                                <usedOther>60</usedOther>
+                            </used>
+                            <usedByEasement>60</usedByEasement>
+                            <notUsed>
+                                <total>60</total>
+                                <temporaryUsedRent>60</temporaryUsedRent>
+                                <temporaryUsedFree>60</temporaryUsedFree>
+                                <temporaryUsedWithoutRigt>60</temporaryUsedWithoutRigt>
+                                <temporaryUsedOther>60</temporaryUsedOther>
+                            </notUsed>
+                            <expensesForLand>
+                                <total>60</total>
+                                <costsTotal>60</costsTotal>
+                                <costsRefund>60</costsRefund>
+                                <landTax>60</landTax>
+                            </expensesForLand>
+                        </lendObjectUse>
+                    </lendObject>
                     <lendObjectUse>
                         <lineCode>0000</lineCode>
                         <total>60</total>
                         <used>
-                            <total>60</total>
-                            <mainPurposeTask>60</mainPurposeTask>
-                            <mainPurposeOverTask>60</mainPurposeOverTask>
-                            <usedOther>60</usedOther>
+                            <total>60.0000000000</total>
+                            <mainPurposeTask>60.0000000000</mainPurposeTask>
+                            <mainPurposeOverTask>60.0000000000</mainPurposeOverTask>
+                            <usedOther>60.0000000000</usedOther>
                         </used>
                         <usedByEasement>60</usedByEasement>
                         <notUsed>
-                            <total>60</total>
-                            <temporaryUsedRent>60</temporaryUsedRent>
-                            <temporaryUsedFree>60</temporaryUsedFree>
-                            <temporaryUsedWithoutRigt>60</temporaryUsedWithoutRigt>
-                            <temporaryUsedOther>60</temporaryUsedOther>
+                            <total>60.0000000000</total>
+                            <temporaryUsedRent>60.0000000000</temporaryUsedRent>
+                            <temporaryUsedFree>60.0000000000</temporaryUsedFree>
+                            <temporaryUsedWithoutRigt>60.0000000000</temporaryUsedWithoutRigt>
+                            <temporaryUsedOther>60.0000000000</temporaryUsedOther>
                         </notUsed>
                         <expensesForLand>
-                            <total>60</total>
-                            <costsTotal>60</costsTotal>
-                            <costsRefund>60</costsRefund>
-                            <landTax>60</landTax>
+                            <total>60.0000000000</total>
+                            <costsTotal>60.0000000000</costsTotal>
+                            <costsRefund>60.0000000000</costsRefund>
+                            <landTax>60.0000000000</landTax>
                         </expensesForLand>
                     </lendObjectUse>
-                </lendObject>
-                    <lendObjectUse>
-                    <lineCode>0000</lineCode>
-                    <total>60</total>
-                    <used>
-                        <total>60.0000000000</total>
-                        <mainPurposeTask>60.0000000000</mainPurposeTask>
-                        <mainPurposeOverTask>60.0000000000</mainPurposeOverTask>
-                        <usedOther>60.0000000000</usedOther>
-                    </used>
-                    <usedByEasement>60</usedByEasement>
-                    <notUsed>
-                        <total>60.0000000000</total>
-                        <temporaryUsedRent>60.0000000000</temporaryUsedRent>
-                        <temporaryUsedFree>60.0000000000</temporaryUsedFree>
-                        <temporaryUsedWithoutRigt>60.0000000000</temporaryUsedWithoutRigt>
-                        <temporaryUsedOther>60.0000000000</temporaryUsedOther>
-                    </notUsed>
-                    <expensesForLand>
-                        <total>60.0000000000</total>
-                        <costsTotal>60.0000000000</costsTotal>
-                        <costsRefund>60.0000000000</costsRefund>
-                        <landTax>60.0000000000</landTax>
-                    </expensesForLand>
-                </lendObjectUse>
-                 </landPermanentUse>
-                <estateRentUse>  Сведения о недвижимом
-                    имуществе, используемо м по договору
-                    аренды с помесячной оплатой
+                </landPermanentUse>
+                <estateRentUse>
+                    <!-- Сведения о недвижимом имуществе, используемо м по договору аренды с
+                    помесячной оплатой  -->
                     <estateRentUseObjects>
                         <typeObject>
                             <type>1000</type>
@@ -2661,8 +2550,8 @@
                     </estateRentUseObjects>
                 </estateRentUse>
                 <valuableMovableProperty>
-                    Сведения об особо ценном движимом имуществе (за
-                    исключение м транспортны х средств)
+                    <!-- Сведения об особо ценном движимом имуществе (за исключение
+                    м транспортны х средств)  -->
                     <valuableMovablePropertyObjects>
                         <typeMovableObject>
                             <type>1000</type>
@@ -2839,9 +2728,9 @@
                         </residualValue>
                     </valuableMovablePropertyObjects>
                 </valuableMovableProperty>
-                <movablePropertyMaintenanceCosts> 
-                    Сведения о расходах на содержание особо
-                    ценного движимого имущества
+                <movablePropertyMaintenanceCosts>
+                    <!-- Сведения о расходах на содержание особо ценного
+                    движимого имущества  -->
                     <movablePropertyMaintenanceCostsObjects>
                         <typeMovableObject>
                             <type>1000</type>
@@ -2914,8 +2803,8 @@
                         </maintenanceCosts>
                     </movablePropertyMaintenanceCostsObjects>
                 </movablePropertyMaintenanceCosts>
-                <vehicles> 
-                    Сведения о транспортны х средствах
+                <vehicles>
+                    <!-- Сведения о транспортны х средствах  -->
                     <usedVehicles>
                         <usedVehiclesTransports>
                             <TransportsType>
@@ -3917,7 +3806,7 @@
                             </TransportsType>
                         </costMaintenanceVehiclesTransports>
                     </costMaintenanceVehicles>
-                </vehicles> -->
+                </vehicles>
             </assetsUse>
             <effectiveActivity xmlns="http://bus.gov.ru/types/1" />
         </position>
