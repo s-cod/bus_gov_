@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"time"
 
@@ -59,9 +60,9 @@ func ProcessFile(filePath string) error {
 		ReportYear:        year,
 		ConfirmDate:       currentTime[:10],
 		// Result            Result
-		AssetsUse: AssetsUse{
-			Xmlns: "http://bus.gov.ru/types/1",
-		},
+		// AssetsUse: AssetsUse{
+		// 	Xmlns: "http://bus.gov.ru/types/1",
+		// },
 		EffectiveActivity: EffectiveActivity{
 			Xmlns: "http://bus.gov.ru/types/1",
 		},
@@ -177,6 +178,7 @@ func ProcessFile(filePath string) error {
 
 	s11 := []int{26, 30, 34}
 	s12 := []int{17, 21, 25}
+	s13 := []int{12, 15, 20}
 	for i := range 3 {
 		numberEmployeesRemunerationGroups[i] = NumberEmployeesRemunerationGroups{
 			// Name: rows[s11[i]][0],
@@ -232,20 +234,20 @@ func ProcessFile(filePath string) error {
 						IncomeActivities:       getFinLen(rows2[s12[i]], 133),
 					},
 					InsideCombining: InsideCombining{
-						SubsidiesContract:      getFinLen(rows3[17], 31),
-						SubsidiesOther:         getFinLen(rows3[17], 41),
-						SubsidiesGrantFederal:  getFinLen(rows3[17], 50),
-						SubsidiesGrantRegional: getFinLen(rows3[17], 59),
-						Oms:                    getFinLen(rows3[17], 68),
-						IncomeActivities:       getFinLen(rows3[17], 86),
+						SubsidiesContract:      getFinLen(rows3[s13[i]], 31),
+						SubsidiesOther:         getFinLen(rows3[s13[i]], 41),
+						SubsidiesGrantFederal:  getFinLen(rows3[s13[i]], 50),
+						SubsidiesGrantRegional: getFinLen(rows3[s13[i]], 59),
+						Oms:                    getFinLen(rows3[s13[i]], 68),
+						IncomeActivities:       getFinLen(rows3[s13[i]], 77),
 					},
 					OutsideWorkplace: OutsideWorkplace{
-						SubsidiesContract:      getFinLen(rows3[17], 96),
-						SubsidiesOther:         getFinLen(rows3[17], 96),
-						SubsidiesGrantFederal:  getFinLen(rows3[17], 105),
-						SubsidiesGrantRegional: getFinLen(rows3[17], 114),
-						Oms:                    getFinLen(rows3[17], 123),
-						IncomeActivities:       getFinLen(rows3[17], 132),
+						SubsidiesContract:      getFinLen(rows3[s13[i]], 86),
+						SubsidiesOther:         getFinLen(rows3[s13[i]], 96),
+						SubsidiesGrantFederal:  getFinLen(rows3[s13[i]], 105),
+						SubsidiesGrantRegional: getFinLen(rows3[s13[i]], 114),
+						Oms:                    getFinLen(rows3[s13[i]], 123),
+						IncomeActivities:       getFinLen(rows3[s13[i]], 132),
 					},
 					EmployeesContract: EmployeesContract{
 						SubsidiesContract:      "0",
@@ -273,7 +275,7 @@ func ProcessFile(filePath string) error {
 	}
 
 	creditPayment := []CreditPayment{}
-	fmt.Println(len(rows[25]))
+	// fmt.Println(len(rows[25]))
 	for i := 24; i < 47; i++ {
 		if len(rows[i]) < 40 {
 			continue
@@ -310,6 +312,145 @@ func ProcessFile(filePath string) error {
 			CreditAccountsRF:       "",
 			CreditAccountsCurrency: "",
 		},
+	}
+	// ===================================
+	// Сведения о недвижимом имуществе
+	// ===================================
+	rows, err = f.GetRows("Лист15")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+	rows2, err = f.GetRows("Лист16")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+	// s1 := [2]int{25, 29}
+
+	// TODO обработать в цикле
+
+	actualExpenses := ActualExpenses{
+		Utilities: Utilities{
+			Total:             getFinLen(rows2[10], 66),
+			ReimbursedByUsers: "0",
+			UnusedProperty:    "0",
+		},
+		PropertyMaintenanceServices: PropertyMaintenanceServices{
+			Total:             getFinLen(rows2[10], 91),
+			ReimbursedByUsers: "0",
+			UnusedProperty:    "0",
+		},
+		PropertyTax: PropertyTax{
+			Total:             "0",
+			ReimbursedByUsers: "0",
+			UnusedProperty:    "0",
+		},
+		Total: getFinLen(rows2[10], 57),
+	}
+	actualExpensesNull := ActualExpenses{
+		Utilities: Utilities{
+			Total:             "0",
+			ReimbursedByUsers: "0",
+			UnusedProperty:    "0",
+		},
+		PropertyMaintenanceServices: PropertyMaintenanceServices{
+			Total:             "0",
+			ReimbursedByUsers: "0",
+			UnusedProperty:    "0",
+		},
+		PropertyTax: PropertyTax{
+			Total:             "0",
+			ReimbursedByUsers: "0",
+			UnusedProperty:    "0",
+		},
+		Total: "0",
+	}
+	estateObject := []EstateObject{}
+
+	tmp := false
+
+	for i := 25; i < 40; i++ {
+		if len(rows[i]) < 87 {
+			continue
+		}
+		if tmp {
+			actualExpenses = actualExpensesNull
+		}
+		estateObject = append(estateObject, EstateObject{
+			Name:      rows[i][0],
+			Address:   rows[i][17],
+			CadNumber: rows[i][32],
+			Oktmo: Oktmo{
+				Code: rows[i][41],
+				Name: "Name",
+			},
+			UniqueObjectCode: strconv.Itoa(i),
+			BuildingYear:     rows[i][55],
+			Unit: Unit{
+				Code:   rows[i][68],
+				Symbol: rows[i][60],
+			},
+			TypeObject: TypeObject{
+				Type:     "1000",
+				LineCode: "1100",
+			},
+			Used: Used{
+				Total:               "1",
+				MainPurposeTask:     "1",
+				MainPurposeOverTask: "0",
+				OtherPurpose:        "0",
+			},
+			ActualExpenses: actualExpenses,
+		})
+		tmp = true
+	}
+
+	estateExceptLand := EstateExceptLand{
+		EstateExceptLandObjects: EstateExceptLandObjects{
+			TypeObject: TypeObject{
+				Type:     "1000",
+				LineCode: "1000",
+			},
+			EstateObject: estateObject,
+		},
+	}
+
+	// Сведения о земельных участках, предоставленных на праве постоянного
+	// (бессрочного ) пользования
+	lendObject := []LendObject{}
+	// TODO Обработать в цикле
+
+	landPermanentUse := LandPermanentUse{
+		LendObject: lendObject,
+		LendObjectUse: LendObjectUse{
+			LineCode: "9000",
+			Total:    "0",
+			Used: UsedL{
+				Total:               "0",
+				MainPurposeTask:     "0",
+				MainPurposeOverTask: "0",
+				UsedOther:           "0",
+			},
+			UsedByEasement: "0",
+			NotUsed: NotUsed{
+				Total:                    "0",
+				TemporaryUsedRent:        "0",
+				TemporaryUsedFree:        "0",
+				TemporaryUsedWithoutRigt: "0",
+				TemporaryUsedOther:       "0",
+			},
+			ExpensesForLand: ExpensesForLand{
+				Total:       "0",
+				CostsTotal:  "0",
+				CostsRefund: "0",
+				LandTax:     "0",
+			},
+		},
+	}
+
+	position.AssetsUse = AssetsUse{
+		Xmlns:            "http://bus.gov.ru/types/1",
+		EstateExceptLand: estateExceptLand,
+		LandPermanentUse: landPermanentUse,
 	}
 
 	doc := ReportActivityResult{

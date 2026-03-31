@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <reportActivityResult xmlns="http://bus.gov.ru/external/1" xmlns:ns2="http://bus.gov.ru/types/1">
     <header xmlns="http://bus.gov.ru/types/1">
-        <id>18070319-c4a7-4675-aa15-8a3c22bc3154</id>
-        <createDateTime>2026-03-30T15:23:55</createDateTime>
+        <id>f19df711-8ee5-4b5a-892d-ec553c89082c</id>
+        <createDateTime>2026-03-31T11:07:36</createDateTime>
     </header>
     <body>
         <position>
-            <ns2:positionId>0c494a6c-041b-41b2-9e25-87b2c55a4be2</ns2:positionId>
-            <ns2:changeDate>2026-03-30T15:23:55</ns2:changeDate>
+            <ns2:positionId>a381062f-e074-4abc-a801-39fef813bb24</ns2:positionId>
+            <ns2:changeDate>2026-03-31T11:07:36</ns2:changeDate>
             <placer xmlns="http://bus.gov.ru/types/1">
                 <regNum>523D2025</regNum>
                 <fullName>Чучкинская оош</fullName>
@@ -27,7 +27,7 @@
                 <executorName>Глебова Елена Евгеньевна</executorName>
                 <executorPosition>директор</executorPosition>
                 <phone> </phone>
-                <signDate>2026-03-30</signDate>
+                <signDate>2026-03-31</signDate>
                 <signerDetailsType>PAYMENTS_AND_RECEIPTS</signerDetailsType>
             </signerDetails>
             <ns2:reportMonth>Январь</ns2:reportMonth>
@@ -39,7 +39,7 @@
             <ns2:ppoName></ns2:ppoName>
             <ns2:oktmoCode>52509000147</ns2:oktmoCode>
             <ns2:reportYear>2026</ns2:reportYear>
-            <ns2:confirmDate>2026-03-30</ns2:confirmDate>
+            <ns2:confirmDate>2026-03-31</ns2:confirmDate>
             <result xmlns="http://bus.gov.ru/types/1">
                 <receiptsAndPayments>
                     <receipts>
@@ -84,7 +84,7 @@
                         <name>Оплата труда и компенсационные</name>
                         <lineCode>0100</lineCode>
                         <paymentsTotal>1989146.81</paymentsTotal>
-                        <paymentsTotalShare>48.04</paymentsTotalShare>
+                        <paymentsTotalShare>48.03</paymentsTotalShare>
                         <financialSupportSubsidiesStateTasks>1989146.81</financialSupportSubsidiesStateTasks>
                         <paymentsTotalShare6>55.08</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
@@ -1159,28 +1159,27 @@
                 </openedCreditAccounts>
             </result>
             <assetsUse xmlns="http://bus.gov.ru/types/1">
+                <!-- Сведения о недвижимом имуществе, за исключение м земельных  участков,  -->
                 <estateExceptLand>
-                    <!-- Сведения о недвижимом имуществе, за исключение м земельных  участков,
-                    закрепленно м на праве оперативног о управления -->
                     <estateExceptLandObjects>
                         <typeObject>
                             <type>1000</type>
                             <lineCode>1000</lineCode>
                         </typeObject>
                         <estateObject>
-                            <name>Нежилое помещение (школа)</name>
+                            <name>в том числе:</name>
                             <address>Омская область, Горьковский район, д.Чучкино,ул.Переулок
-                                Зеленый,31</address>
+                                Зеленый,3</address>
                             <cadNumber>55:04:050301:347</cadNumber>
                             <oktmo>
                                 <code>52509000</code>
-                                <name>name1</name>
+                                <name>Name</name>
                             </oktmo>
-                            <uniqueObjectCode>1</uniqueObjectCode>
+                            <uniqueObjectCode>25</uniqueObjectCode>
                             <buildingYear>1977</buildingYear>
                             <unit>
-                                <code>000</code>
-                                <symbol>symbol1</symbol>
+                                <code>055</code>
+                                <symbol>Квадратный метр</symbol>
                             </unit>
                             <typeObject>
                                 <type>1000</type>
@@ -1192,18 +1191,6 @@
                                 <mainPurposeOverTask>0</mainPurposeOverTask>
                                 <otherPurpose>0</otherPurpose>
                             </used>
-                            <!-- <TransferredForTemporaryUse>
-                                <total>0</total>
-                                <rentBased>0</rentBased>
-                                <gratuitousUse>0</gratuitousUse>
-                                <hourlyPayment>0</hourlyPayment>
-                            </TransferredForTemporaryUse>
-                            <notUsed>
-                                <total>0</total>
-                                <underConstraction>0</underConstraction>
-                                <needConstraction>0</needConstraction>
-                                <waitOffs>0</waitOffs>
-                            </notUsed> -->
                             <actualExpenses>
                                 <utilities>
                                     <total>722384.43</total>
@@ -1225,71 +1212,110 @@
                         </estateObject>
                     </estateExceptLandObjects>
                 </estateExceptLand>
-                <!-- <landPermanentUse>
-                     Сведения о земельных участках, предоставле нных на праве  постоянного
-                    (бессрочного ) пользования 
+                <landPermanentUse>
+                    <!-- Сведения о земельных участках, предоставле нных на праве постоянного
+                    (бессрочного ) пользования  -->
                     <lendObject>
-                    <name>name1</name>
-                    <address>address1</address>
-                    <oktmo>
-                        <code>00000000</code>
-                        <name>name1</name>
-                    </oktmo>
-                    <cadNumber>cadNumber1</cadNumber>
-                    <unit>
-                        <code>0000</code>
-                        <symbol>symbol1</symbol>
-                    </unit>
+                        <name>Земельный участок</name>
+                        <address>Омская область, Горьковский район, р.п. Горьковское, ул. П.
+                            Морозова,10</address>
+                        <oktmo>
+                            <code>52509000</code>
+                            <name>name1</name>
+                        </oktmo>
+                        <cadNumber>55:04:120103:1141</cadNumber>
+                        <unit>
+                            <code>055</code>
+                            <symbol>Квадратный метр</symbol>
+                        </unit>
+                        <lendObjectUse>
+                            <lineCode>1001</lineCode>
+                            <total>1</total>
+                            <used>
+                                <total>1</total>
+                                <mainPurposeTask>1</mainPurposeTask>
+                                <mainPurposeOverTask>0</mainPurposeOverTask>
+                                <usedOther>0</usedOther>
+                            </used>
+                            <usedByEasement>0</usedByEasement>
+                            <notUsed>
+                                <total>0</total>
+                                <temporaryUsedRent>0</temporaryUsedRent>
+                                <temporaryUsedFree>0</temporaryUsedFree>
+                                <temporaryUsedWithoutRigt>0</temporaryUsedWithoutRigt>
+                                <temporaryUsedOther>0</temporaryUsedOther>
+                            </notUsed>
+                            <expensesForLand>
+                                <total>100</total>
+                                <costsTotal>100</costsTotal>
+                                <costsRefund>0</costsRefund>
+                                <landTax>0</landTax>
+                            </expensesForLand>
+                        </lendObjectUse>
+                    </lendObject>
+                    <lendObject>
+                        <name>Земельный участок</name>
+                        <address>Омская область, Горьковский район, р.п. Горьковское, ул. П.
+                            Морозова,10</address>
+                        <oktmo>
+                            <code>52509000</code>
+                            <name>name1</name>
+                        </oktmo>
+                        <cadNumber>55:04:120103:1141</cadNumber>
+                        <unit>
+                            <code>055</code>
+                            <symbol>Квадратный метр</symbol>
+                        </unit>
+                        <lendObjectUse>
+                            <lineCode>1002</lineCode>
+                            <total>1</total>
+                            <used>
+                                <total>1</total>
+                                <mainPurposeTask>1</mainPurposeTask>
+                                <mainPurposeOverTask>0</mainPurposeOverTask>
+                                <usedOther>0</usedOther>
+                            </used>
+                            <usedByEasement>0</usedByEasement>
+                            <notUsed>
+                                <total>0</total>
+                                <temporaryUsedRent>0</temporaryUsedRent>
+                                <temporaryUsedFree>0</temporaryUsedFree>
+                                <temporaryUsedWithoutRigt>0</temporaryUsedWithoutRigt>
+                                <temporaryUsedOther>0</temporaryUsedOther>
+                            </notUsed>
+                            <expensesForLand>
+                                <total>100</total>
+                                <costsTotal>100</costsTotal>
+                                <costsRefund>0</costsRefund>
+                                <landTax>0</landTax>
+                            </expensesForLand>
+                        </lendObjectUse>
+                    </lendObject>
                     <lendObjectUse>
-                        <lineCode>0000</lineCode>
-                        <total>60</total>
+                        <lineCode>9000</lineCode>
+                        <total>0</total>
                         <used>
-                            <total>60</total>
-                            <mainPurposeTask>60</mainPurposeTask>
-                            <mainPurposeOverTask>60</mainPurposeOverTask>
-                            <usedOther>60</usedOther>
+                            <total>0</total>
+                            <mainPurposeTask>0</mainPurposeTask>
+                            <mainPurposeOverTask>0</mainPurposeOverTask>
+                            <usedOther>0</usedOther>
                         </used>
-                        <usedByEasement>60</usedByEasement>
+                        <usedByEasement>0</usedByEasement>
                         <notUsed>
-                            <total>60</total>
-                            <temporaryUsedRent>60</temporaryUsedRent>
-                            <temporaryUsedFree>60</temporaryUsedFree>
-                            <temporaryUsedWithoutRigt>60</temporaryUsedWithoutRigt>
-                            <temporaryUsedOther>60</temporaryUsedOther>
+                            <total>0</total>
+                            <temporaryUsedRent>0</temporaryUsedRent>
+                            <temporaryUsedFree>0</temporaryUsedFree>
+                            <temporaryUsedWithoutRigt>0</temporaryUsedWithoutRigt>
+                            <temporaryUsedOther>0</temporaryUsedOther>
                         </notUsed>
                         <expensesForLand>
-                            <total>60</total>
-                            <costsTotal>60</costsTotal>
-                            <costsRefund>60</costsRefund>
-                            <landTax>60</landTax>
+                            <total>0</total>
+                            <costsTotal>0</costsTotal>
+                            <costsRefund>0</costsRefund>
+                            <landTax>0</landTax>
                         </expensesForLand>
                     </lendObjectUse>
-                </lendObject>
-                    <lendObjectUse>
-                    <lineCode>0000</lineCode>
-                    <total>60</total>
-                    <used>
-                        <total>60.0000000000</total>
-                        <mainPurposeTask>60.0000000000</mainPurposeTask>
-                        <mainPurposeOverTask>60.0000000000</mainPurposeOverTask>
-                        <usedOther>60.0000000000</usedOther>
-                    </used>
-                    <usedByEasement>60</usedByEasement>
-                    <notUsed>
-                        <total>60.0000000000</total>
-                        <temporaryUsedRent>60.0000000000</temporaryUsedRent>
-                        <temporaryUsedFree>60.0000000000</temporaryUsedFree>
-                        <temporaryUsedWithoutRigt>60.0000000000</temporaryUsedWithoutRigt>
-                        <temporaryUsedOther>60.0000000000</temporaryUsedOther>
-                    </notUsed>
-                    <expensesForLand>
-                        <total>60.0000000000</total>
-                        <costsTotal>60.0000000000</costsTotal>
-                        <costsRefund>60.0000000000</costsRefund>
-                        <landTax>60.0000000000</landTax>
-                    </expensesForLand>
-                </lendObjectUse>
-                </landPermanentUse>                -->
+                </landPermanentUse>
             </assetsUse>
             <effectiveActivity xmlns="http://bus.gov.ru/types/1"></effectiveActivity>
         </position>

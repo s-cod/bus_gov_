@@ -313,9 +313,137 @@ type CreditAccountsCurrency struct {
 	XMLName xml.Name `xml:"CreditAccountsRF"`
 }
 
+// сведения о имуществе
 type AssetsUse struct {
-	XMLName xml.Name `xml:"assetsUse"`
-	Xmlns   string   `xml:"xmlns,attr"`
+	XMLName          xml.Name `xml:"assetsUse"`
+	Xmlns            string   `xml:"xmlns,attr"`
+	EstateExceptLand EstateExceptLand
+	LandPermanentUse LandPermanentUse
+}
+
+// Сведения о недвижимом имуществе, за исключение м земельных  участков,
+// закрепленно м на праве оперативног о управления
+type EstateExceptLand struct {
+	XMLName                 xml.Name `xml:"estateExceptLand"`
+	EstateExceptLandObjects EstateExceptLandObjects
+}
+type EstateExceptLandObjects struct {
+	XMLName      xml.Name `xml:"estateExceptLandObjects"`
+	TypeObject   TypeObject
+	EstateObject []EstateObject
+}
+type TypeObject struct {
+	XMLName  xml.Name `xml:"typeObject"`
+	Type     string   `xml:"type"`
+	LineCode string   `xml:"lineCode"`
+}
+
+type EstateObject struct {
+	XMLName          xml.Name `xml:"estateObject"`
+	Name             string   `xml:"name"`
+	Address          string   `xml:"address"`
+	CadNumber        string   `xml:"cadNumber"`
+	Oktmo            Oktmo
+	UniqueObjectCode string `xml:"uniqueObjectCode"`
+	BuildingYear     string `xml:"buildingYear"`
+	Unit             Unit
+	TypeObject       TypeObject
+	Used             Used
+	ActualExpenses   ActualExpenses
+}
+type Oktmo struct {
+	XMLName xml.Name `xml:"oktmo"`
+	Code    string   `xml:"code"`
+	Name    string   `xml:"name"`
+}
+type Unit struct {
+	XMLName xml.Name `xml:"unit"`
+	Code    string   `xml:"code"`
+	Symbol  string   `xml:"symbol"`
+}
+
+type Used struct {
+	XMLName             xml.Name `xml:"used"`
+	Total               string   `xml:"total"`
+	MainPurposeTask     string   `xml:"mainPurposeTask"`
+	MainPurposeOverTask string   `xml:"mainPurposeOverTask"`
+	OtherPurpose        string   `xml:"otherPurpose"`
+}
+
+type ActualExpenses struct {
+	XMLName                     xml.Name `xml:"actualExpenses"`
+	Utilities                   Utilities
+	PropertyMaintenanceServices PropertyMaintenanceServices
+	PropertyTax                 PropertyTax
+	Total                       string `xml:"total"`
+}
+type Utilities struct {
+	XMLName           xml.Name `xml:"utilities"`
+	Total             string   `xml:"total"`
+	ReimbursedByUsers string   `xml:"reimbursedByUsers"`
+	UnusedProperty    string   `xml:"unusedProperty"`
+}
+type PropertyMaintenanceServices struct {
+	XMLName           xml.Name `xml:"propertyMaintenanceServices"`
+	Total             string   `xml:"total"`
+	ReimbursedByUsers string   `xml:"reimbursedByUsers"`
+	UnusedProperty    string   `xml:"unusedProperty"`
+}
+type PropertyTax struct {
+	XMLName           xml.Name `xml:"propertyTax"`
+	Total             string   `xml:"total"`
+	ReimbursedByUsers string   `xml:"reimbursedByUsers"`
+	UnusedProperty    string   `xml:"unusedProperty"`
+}
+
+// Сведения о земельных участках, предоставленных на праве постоянного
+// (бессрочного ) пользования
+type LandPermanentUse struct {
+	XMLName       xml.Name `xml:"landPermanentUse"`
+	LendObject    []LendObject
+	LendObjectUse LendObjectUse
+}
+type LendObject struct {
+	XMLName       xml.Name `xml:"lendObject"`
+	Name          string
+	Address       string
+	Oktmo         Oktmo
+	CadNumber     string
+	Unit          Unit
+	LendObjectUse LendObjectUse
+}
+type LendObjectUse struct {
+	XMLName         xml.Name `xml:"lendObjectUse"`
+	LineCode        string
+	Total           string
+	Used            UsedL
+	UsedByEasement  string
+	NotUsed         NotUsed
+	ExpensesForLand ExpensesForLand
+}
+
+type UsedL struct {
+	XMLName             xml.Name `xml:"used"`
+	Total               string   `xml:"total"`
+	MainPurposeTask     string   `xml:"mainPurposeTask"`
+	MainPurposeOverTask string   `xml:"mainPurposeOverTask"`
+	UsedOther           string   `xml:"usedOther"`
+}
+
+type NotUsed struct {
+	XMLName                  xml.Name `xml:"notUsed"`
+	Total                    string   `xml:"total"`
+	TemporaryUsedRent        string   `xml:"temporaryUsedRent"`
+	TemporaryUsedFree        string   `xml:"temporaryUsedFree"`
+	TemporaryUsedWithoutRigt string   `xml:"temporaryUsedWithoutRigt"`
+	TemporaryUsedOther       string   `xml:"temporaryUsedOther"`
+}
+type ExpensesForLand struct {
+	XMLName     xml.Name `xml:"expensesForLand"`
+	Total       string   `xml:"total"`
+	CostsTotal  string   `xml:"costsTotal"`
+	CostsRefund string   `xml:"costsRefund"`
+	LandTax     string   `xml:"landTax"`
 }
 
 // Сведения об особо ценном движимом имуществе
