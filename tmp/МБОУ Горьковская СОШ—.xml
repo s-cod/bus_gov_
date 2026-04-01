@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <reportActivityResult xmlns="http://bus.gov.ru/external/1" xmlns:ns2="http://bus.gov.ru/types/1">
     <header xmlns="http://bus.gov.ru/types/1">
-        <id>cf7028cd-fdbe-4a65-a44e-3d754c48616e</id>
+        <id>978a22be-7f77-48b7-95ed-a1b975960a02</id>
         <createDateTime>2026-03-31T14:20:28</createDateTime>
     </header>
     <body>
         <position>
-            <ns2:positionId>856cf593-bac6-4f19-837a-10304ab667ac</ns2:positionId>
+            <ns2:positionId>99637f10-c7d6-4591-a5b2-82758b9d56b8</ns2:positionId>
             <ns2:changeDate>2026-03-31T14:20:28</ns2:changeDate>
             <placer xmlns="http://bus.gov.ru/types/1">
                 <regNum>523D2025</regNum>
-                <fullName>Чучкинская оош</fullName>
+                <fullName>Горьковская СОШ</fullName>
                 <inn>5522005218</inn>
                 <kpp>552201001</kpp>
             </placer>
@@ -22,9 +22,9 @@
             </initiator>
             <ns2:versionNumber>1</ns2:versionNumber>
             <signerDetails xmlns="http://bus.gov.ru/types/1">
-                <managerName>Глебова Елена Евгеньевна</managerName>
+                <managerName>Сащенко Анатолий Анатольевич</managerName>
                 <managerPosition>директор</managerPosition>
-                <executorName>Глебова Елена Евгеньевна</executorName>
+                <executorName>Сащенко Анатолий Анатольевич</executorName>
                 <executorPosition>директор</executorPosition>
                 <phone> </phone>
                 <signDate>2026-03-31</signDate>
@@ -47,46 +47,46 @@
                             (муниципального) задания</name>
                         <lineCode>0100</lineCode>
                         <receiptsTotal>80</receiptsTotal>
-                        <reportingFinancialYear>3611433.24</reportingFinancialYear>
-                        <precedingFinancialYear>7449992.87</precedingFinancialYear>
-                        <change>-106.29</change>
-                        <totalAmountShare>86.14</totalAmountShare>
+                        <reportingFinancialYear>36636334.14</reportingFinancialYear>
+                        <precedingFinancialYear>74056777.19</precedingFinancialYear>
+                        <change>-102.14</change>
+                        <totalAmountShare>92.80</totalAmountShare>
                     </receipts>
                     <receipts>
                         <name>Субсидии на иные цели</name>
                         <lineCode>0300</lineCode>
                         <receiptsTotal>80</receiptsTotal>
-                        <reportingFinancialYear>25320.00</reportingFinancialYear>
-                        <precedingFinancialYear>583060.78</precedingFinancialYear>
-                        <change>-2202.77</change>
-                        <totalAmountShare>0.60</totalAmountShare>
+                        <reportingFinancialYear>1403292.56</reportingFinancialYear>
+                        <precedingFinancialYear>9314039.18</precedingFinancialYear>
+                        <change>-563.73</change>
+                        <totalAmountShare>3.55</totalAmountShare>
                     </receipts>
                     <receipts>
                         <name>Доходы от приносящей доход деятельности, компенсаций затрат (за
                             исключением доходов</name>
                         <lineCode>0800</lineCode>
                         <receiptsTotal>80</receiptsTotal>
-                        <reportingFinancialYear>555855.00</reportingFinancialYear>
-                        <precedingFinancialYear>368700.00</precedingFinancialYear>
-                        <change>33.67</change>
-                        <totalAmountShare>13.26</totalAmountShare>
+                        <reportingFinancialYear>1439603.12</reportingFinancialYear>
+                        <precedingFinancialYear>2327342.00</precedingFinancialYear>
+                        <change>-61.67</change>
+                        <totalAmountShare>3.65</totalAmountShare>
                     </receipts>
                     <receipts>
                         <name>в том числе:</name>
                         <lineCode>0801</lineCode>
                         <receiptsTotal>80</receiptsTotal>
-                        <reportingFinancialYear>555855.00</reportingFinancialYear>
-                        <precedingFinancialYear>368700.00</precedingFinancialYear>
-                        <change>33.67</change>
-                        <totalAmountShare>13.26</totalAmountShare>
+                        <reportingFinancialYear>1439603.12</reportingFinancialYear>
+                        <precedingFinancialYear>2327342.00</precedingFinancialYear>
+                        <change>-61.67</change>
+                        <totalAmountShare>3.65</totalAmountShare>
                     </receipts>
                     <payments>
                         <name>Оплата труда и компенсационные</name>
                         <lineCode>0100</lineCode>
-                        <paymentsTotal>1989146.81</paymentsTotal>
-                        <paymentsTotalShare>48.03</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>1989146.81</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>55.08</paymentsTotalShare6>
+                        <paymentsTotal>21054045.07</paymentsTotal>
+                        <paymentsTotalShare>53.33</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>21054045.07</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>57.47</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -105,10 +105,10 @@
                     <payments>
                         <name>Взносы по обязательному</name>
                         <lineCode>0200</lineCode>
-                        <paymentsTotal>637764.84</paymentsTotal>
-                        <paymentsTotalShare>15.40</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>637764.84</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>17.66</paymentsTotalShare6>
+                        <paymentsTotal>7000417.07</paymentsTotal>
+                        <paymentsTotalShare>17.73</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>7000417.07</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>19.11</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -127,11 +127,11 @@
                     <payments>
                         <name>Приобретение товаров, работ,</name>
                         <lineCode>0300</lineCode>
-                        <paymentsTotal>1506727.59</paymentsTotal>
-                        <paymentsTotalShare>36.38</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>976927.59</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>27.05</paymentsTotalShare6>
-                        <financialSupportSubsidiesOther>25320.00</financialSupportSubsidiesOther>
+                        <paymentsTotal>11310250.27</paymentsTotal>
+                        <paymentsTotalShare>21.33</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>8468718.71</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>23.12</paymentsTotalShare6>
+                        <financialSupportSubsidiesOther>1403292.56</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>100.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
                         <paymentsTotalShare10>0.00</paymentsTotalShare10>
@@ -139,7 +139,7 @@
                         <paymentsTotalShare12>0.00</paymentsTotalShare12>
                         <financialSupportOms>0.00</financialSupportOms>
                         <paymentsTotalShare14>0.00</paymentsTotalShare14>
-                        <financialSupportIncomeActivitiesTotal>504480.00</financialSupportIncomeActivitiesTotal>
+                        <financialSupportIncomeActivitiesTotal>1438239.00</financialSupportIncomeActivitiesTotal>
                         <paymentsTotalShare16>100.00</paymentsTotalShare16>
                         <fundsIncome>0.00</fundsIncome>
                         <paymentsTotalShare18>0.00</paymentsTotalShare18>
@@ -149,10 +149,10 @@
                     <payments>
                         <name>из них:</name>
                         <lineCode>0301</lineCode>
-                        <paymentsTotal>4752.91</paymentsTotal>
-                        <paymentsTotalShare>0.11</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>4752.91</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.13</paymentsTotalShare6>
+                        <paymentsTotal>1890.00</paymentsTotal>
+                        <paymentsTotalShare>0.00</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>1890.00</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>0.01</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -193,10 +193,10 @@
                     <payments>
                         <name>коммунальные услуги</name>
                         <lineCode>0303</lineCode>
-                        <paymentsTotal>722384.43</paymentsTotal>
-                        <paymentsTotalShare>17.44</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>722384.43</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>20.00</paymentsTotalShare6>
+                        <paymentsTotal>4845090.86</paymentsTotal>
+                        <paymentsTotalShare>12.27</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>4845090.86</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>13.22</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -237,10 +237,10 @@
                     <payments>
                         <name>работы, услуги по содержанию</name>
                         <lineCode>0305</lineCode>
-                        <paymentsTotal>240038.43</paymentsTotal>
-                        <paymentsTotalShare>5.80</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>240038.43</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>6.65</paymentsTotalShare6>
+                        <paymentsTotal>1300023.52</paymentsTotal>
+                        <paymentsTotalShare>3.29</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>1300023.52</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>3.55</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -259,10 +259,10 @@
                     <payments>
                         <name>прочие работы, услуги</name>
                         <lineCode>0306</lineCode>
-                        <paymentsTotal>6595.60</paymentsTotal>
-                        <paymentsTotalShare>0.16</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>6595.60</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.18</paymentsTotalShare6>
+                        <paymentsTotal>635719.38</paymentsTotal>
+                        <paymentsTotalShare>1.61</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>635719.38</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>1.74</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -281,10 +281,10 @@
                     <payments>
                         <name>основные средства</name>
                         <lineCode>0307</lineCode>
-                        <paymentsTotal>324317.27</paymentsTotal>
-                        <paymentsTotalShare>7.83</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>3156.22</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.09</paymentsTotalShare6>
+                        <paymentsTotal>173450.00</paymentsTotal>
+                        <paymentsTotalShare>0.44</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>173450.00</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>0.47</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -293,8 +293,8 @@
                         <paymentsTotalShare12>0.00</paymentsTotalShare12>
                         <financialSupportOms>0.00</financialSupportOms>
                         <paymentsTotalShare14>0.00</paymentsTotalShare14>
-                        <financialSupportIncomeActivitiesTotal>321161.05</financialSupportIncomeActivitiesTotal>
-                        <paymentsTotalShare16>63.66</paymentsTotalShare16>
+                        <financialSupportIncomeActivitiesTotal>0.00</financialSupportIncomeActivitiesTotal>
+                        <paymentsTotalShare16>0.00</paymentsTotalShare16>
                         <fundsIncome>0.00</fundsIncome>
                         <paymentsTotalShare18>0.00</paymentsTotalShare18>
                         <fundsIncomeGratuitousReceipts>0.00</fundsIncomeGratuitousReceipts>
@@ -347,11 +347,11 @@
                     <payments>
                         <name>материальные запасы</name>
                         <lineCode>0310</lineCode>
-                        <paymentsTotal>208638.95</paymentsTotal>
-                        <paymentsTotalShare>5.04</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>0.00</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.00</paymentsTotalShare6>
-                        <financialSupportSubsidiesOther>25320.00</financialSupportSubsidiesOther>
+                        <paymentsTotal>4354076.51</paymentsTotal>
+                        <paymentsTotalShare>11.03</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>1512544.95</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>4.13</paymentsTotalShare6>
+                        <financialSupportSubsidiesOther>1403292.56</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>100.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
                         <paymentsTotalShare10>0.00</paymentsTotalShare10>
@@ -359,8 +359,8 @@
                         <paymentsTotalShare12>0.00</paymentsTotalShare12>
                         <financialSupportOms>0.00</financialSupportOms>
                         <paymentsTotalShare14>0.00</paymentsTotalShare14>
-                        <financialSupportIncomeActivitiesTotal>183318.95</financialSupportIncomeActivitiesTotal>
-                        <paymentsTotalShare16>36.34</paymentsTotalShare16>
+                        <financialSupportIncomeActivitiesTotal>1438239.00</financialSupportIncomeActivitiesTotal>
+                        <paymentsTotalShare16>100.00</paymentsTotalShare16>
                         <fundsIncome>0.00</fundsIncome>
                         <paymentsTotalShare18>0.00</paymentsTotalShare18>
                         <fundsIncomeGratuitousReceipts>0.00</fundsIncomeGratuitousReceipts>
@@ -413,10 +413,10 @@
                     <payments>
                         <name>Социальное обеспечение</name>
                         <lineCode>0600</lineCode>
-                        <paymentsTotal>0.00</paymentsTotal>
-                        <paymentsTotalShare>0.00</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>0.00</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.00</paymentsTotalShare6>
+                        <paymentsTotal>59556.29</paymentsTotal>
+                        <paymentsTotalShare>0.15</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>59556.29</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>0.16</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -435,10 +435,10 @@
                     <payments>
                         <name>Уплата налогов, сборов, прочих</name>
                         <lineCode>0700</lineCode>
-                        <paymentsTotal>7594.00</paymentsTotal>
-                        <paymentsTotalShare>0.18</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>7594.00</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.21</paymentsTotalShare6>
+                        <paymentsTotal>53597.00</paymentsTotal>
+                        <paymentsTotalShare>0.14</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>53597.00</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>0.15</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -523,9 +523,9 @@
                     <payments>
                         <name>земельный налог</name>
                         <lineCode>0704</lineCode>
-                        <paymentsTotal>7594.00</paymentsTotal>
-                        <paymentsTotalShare>0.18</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>7594.00</financialSupportSubsidiesStateTasks>
+                        <paymentsTotal>25065.00</paymentsTotal>
+                        <paymentsTotalShare>0.00</paymentsTotalShare>
+                        <financialSupportSubsidiesStateTasks>10292.00</financialSupportSubsidiesStateTasks>
                         <paymentsTotalShare6>0.00</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
@@ -545,10 +545,10 @@
                     <payments>
                         <name>транспортный налог</name>
                         <lineCode>0705</lineCode>
-                        <paymentsTotal>0.00</paymentsTotal>
+                        <paymentsTotal>9952.00</paymentsTotal>
                         <paymentsTotalShare>0.00</paymentsTotalShare>
-                        <financialSupportSubsidiesStateTasks>0.00</financialSupportSubsidiesStateTasks>
-                        <paymentsTotalShare6>0.00</paymentsTotalShare6>
+                        <financialSupportSubsidiesStateTasks>43305.00</financialSupportSubsidiesStateTasks>
+                        <paymentsTotalShare6>0.12</paymentsTotalShare6>
                         <financialSupportSubsidiesOther>0.00</financialSupportSubsidiesOther>
                         <paymentsTotalShare8>0.00</paymentsTotalShare8>
                         <grantSubsidiesStateBudget>0.00</grantSubsidiesStateBudget>
@@ -767,8 +767,8 @@
                 <creditPayment>
                     <name>По выплате заработной платы</name>
                     <lineCode>1000</lineCode>
-                    <creditPaymentStartYearTotal>100.00</creditPaymentStartYearTotal>
-                    <creditPaymentStartYearDedlineReportingYear>100.00</creditPaymentStartYearDedlineReportingYear>
+                    <creditPaymentStartYearTotal>0.00</creditPaymentStartYearTotal>
+                    <creditPaymentStartYearDedlineReportingYear>0.00</creditPaymentStartYearDedlineReportingYear>
                     <creditPaymentEndYearTotal>0.00</creditPaymentEndYearTotal>
                     <creditPaymentEndYearTotalQuarter1>0.00</creditPaymentEndYearTotalQuarter1>
                     <creditPaymentEndYearTotalJanuary>0.00</creditPaymentEndYearTotalJanuary>
@@ -797,7 +797,7 @@
                     <amountDeferredTotal>0.00</amountDeferredTotal>
                     <amountDeferredSalary>0.00</amountDeferredSalary>
                     <amountDeferredClaims>0.00</amountDeferredClaims>
-                    <amountDeferredNotReceived>100.00</amountDeferredNotReceived>
+                    <amountDeferredNotReceived>0.00</amountDeferredNotReceived>
                     <amountDeferredOther>0.00</amountDeferredOther>
                 </creditPayment>
                 <creditPayment>
@@ -877,9 +877,9 @@
                     <lineCode>4000</lineCode>
                     <creditPaymentStartYearTotal>0.00</creditPaymentStartYearTotal>
                     <creditPaymentStartYearDedlineReportingYear>0.00</creditPaymentStartYearDedlineReportingYear>
-                    <creditPaymentEndYearTotal>0.00</creditPaymentEndYearTotal>
-                    <creditPaymentEndYearTotalQuarter1>0.00</creditPaymentEndYearTotalQuarter1>
-                    <creditPaymentEndYearTotalJanuary>0.00</creditPaymentEndYearTotalJanuary>
+                    <creditPaymentEndYearTotal>20608.00</creditPaymentEndYearTotal>
+                    <creditPaymentEndYearTotalQuarter1>20608.00</creditPaymentEndYearTotalQuarter1>
+                    <creditPaymentEndYearTotalJanuary>20608.00</creditPaymentEndYearTotalJanuary>
                     <creditPaymentEndYearTotalQuarter2>0.00</creditPaymentEndYearTotalQuarter2>
                     <creditPaymentEndYearTotalQuarter3>0.00</creditPaymentEndYearTotalQuarter3>
                     <creditPaymentEndYearTotalQuarter4>0.00</creditPaymentEndYearTotalQuarter4>
@@ -898,37 +898,37 @@
                         </groupStaff>
                         <employees>
                             <staffingStartYear>
-                                <staffingTotal>8.08</staffingTotal>
-                                <staffingBase>8.08</staffingBase>
-                                <replaced>8.08</replaced>
+                                <staffingTotal>72.25</staffingTotal>
+                                <staffingBase>72.25</staffingBase>
+                                <replaced>72.25</replaced>
                                 <vacancy>0.00</vacancy>
                             </staffingStartYear>
                             <averageOfYear>
-                                <total>3.7</total>
-                                <base>3.7</base>
-                                <mainPlace>3.7</mainPlace>
+                                <total>34.2</total>
+                                <base>31.3</base>
+                                <mainPlace>31.3</mainPlace>
                                 <insidePartTme>0.00</insidePartTme>
-                                <outsidePartTime>0.00</outsidePartTime>
+                                <outsidePartTime>2.9</outsidePartTime>
                             </averageOfYear>
                             <contracts>
                                 <employees>0.00</employees>
                                 <notEmployees>0.00</notEmployees>
                             </contracts>
                             <staffingEndYear>
-                                <staffingTotal>5.52</staffingTotal>
-                                <staffingBase>5.52</staffingBase>
-                                <replaced>5.52</replaced>
+                                <staffingTotal>72.25</staffingTotal>
+                                <staffingBase>72.25</staffingBase>
+                                <replaced>72.25</replaced>
                                 <vacancy>0.00</vacancy>
                             </staffingEndYear>
                         </employees>
                         <salary>
                             <salaryFund>
-                                <total>4201297.25</total>
-                                <base>4201297.25</base>
-                                <baseFullTime>4201297.25</baseFullTime>
+                                <total>20663678.94</total>
+                                <base>19524517.36</base>
+                                <baseFullTime>19524517.36</baseFullTime>
                                 <mainPartTme>0.00</mainPartTme>
                                 <insideCombining>0.00</insideCombining>
-                                <outside>0.00</outside>
+                                <outside>1139161.58</outside>
                             </salaryFund>
                             <accrued>
                                 <employees>0.00</employees>
@@ -936,8 +936,8 @@
                             </accrued>
                             <salaryAnalytic>
                                 <baseWorkplace>
-                                    <subsidiesContract>3353144.23</subsidiesContract>
-                                    <subsidiesOther>848153.02</subsidiesOther>
+                                    <subsidiesContract>17632835.47</subsidiesContract>
+                                    <subsidiesOther>3030843.47</subsidiesOther>
                                     <subsidiesGrantFederal>0.00</subsidiesGrantFederal>
                                     <subsidiesGrantRegional>0.00</subsidiesGrantRegional>
                                     <oms>0.00</oms>
@@ -952,7 +952,7 @@
                                     <incomeActivities>0.00</incomeActivities>
                                 </insideCombining>
                                 <outsideWorkplace>
-                                    <subsidiesContract>0.00</subsidiesContract>
+                                    <subsidiesContract>1139161.58</subsidiesContract>
                                     <subsidiesOther>0.00</subsidiesOther>
                                     <subsidiesGrantFederal>0.00</subsidiesGrantFederal>
                                     <subsidiesGrantRegional>0.00</subsidiesGrantRegional>
@@ -985,15 +985,15 @@
                         </groupStaff>
                         <employees>
                             <staffingStartYear>
-                                <staffingTotal>4.4</staffingTotal>
-                                <staffingBase>4.4</staffingBase>
-                                <replaced>4.4</replaced>
+                                <staffingTotal>67.13</staffingTotal>
+                                <staffingBase>67.13</staffingBase>
+                                <replaced>67.13</replaced>
                                 <vacancy>0.00</vacancy>
                             </staffingStartYear>
                             <averageOfYear>
-                                <total>4.4</total>
-                                <base>4.4</base>
-                                <mainPlace>4.4</mainPlace>
+                                <total>62.1</total>
+                                <base>62.1</base>
+                                <mainPlace>62.1</mainPlace>
                                 <insidePartTme>0.00</insidePartTme>
                                 <outsidePartTime>0.00</outsidePartTime>
                             </averageOfYear>
@@ -1002,17 +1002,17 @@
                                 <notEmployees>0.00</notEmployees>
                             </contracts>
                             <staffingEndYear>
-                                <staffingTotal>4.4</staffingTotal>
-                                <staffingBase>4.4</staffingBase>
-                                <replaced>4.4</replaced>
+                                <staffingTotal>67.13</staffingTotal>
+                                <staffingBase>67.13</staffingBase>
+                                <replaced>67.13</replaced>
                                 <vacancy>0.00</vacancy>
                             </staffingEndYear>
                         </employees>
                         <salary>
                             <salaryFund>
-                                <total>3112861.23</total>
-                                <base>3112861.23</base>
-                                <baseFullTime>3112861.23</baseFullTime>
+                                <total>38411669.16</total>
+                                <base>38411669.16</base>
+                                <baseFullTime>38411669.16</baseFullTime>
                                 <mainPartTme>0.00</mainPartTme>
                                 <insideCombining>0.00</insideCombining>
                                 <outside>0.00</outside>
@@ -1023,7 +1023,7 @@
                             </accrued>
                             <salaryAnalytic>
                                 <baseWorkplace>
-                                    <subsidiesContract>3112861.23</subsidiesContract>
+                                    <subsidiesContract>38411669.16</subsidiesContract>
                                     <subsidiesOther>0.00</subsidiesOther>
                                     <subsidiesGrantFederal>0.00</subsidiesGrantFederal>
                                     <subsidiesGrantRegional>0.00</subsidiesGrantRegional>
@@ -1072,15 +1072,15 @@
                         </groupStaff>
                         <employees>
                             <staffingStartYear>
-                                <staffingTotal>1</staffingTotal>
-                                <staffingBase>1</staffingBase>
-                                <replaced>1</replaced>
+                                <staffingTotal>6</staffingTotal>
+                                <staffingBase>6</staffingBase>
+                                <replaced>6</replaced>
                                 <vacancy>0.00</vacancy>
                             </staffingStartYear>
                             <averageOfYear>
-                                <total>1</total>
-                                <base>1</base>
-                                <mainPlace>1</mainPlace>
+                                <total>5.3</total>
+                                <base>5.3</base>
+                                <mainPlace>5.3</mainPlace>
                                 <insidePartTme>0.00</insidePartTme>
                                 <outsidePartTime>0.00</outsidePartTime>
                             </averageOfYear>
@@ -1089,17 +1089,17 @@
                                 <notEmployees>0.00</notEmployees>
                             </contracts>
                             <staffingEndYear>
-                                <staffingTotal>1</staffingTotal>
-                                <staffingBase>1</staffingBase>
-                                <replaced>1</replaced>
+                                <staffingTotal>6</staffingTotal>
+                                <staffingBase>6</staffingBase>
+                                <replaced>6</replaced>
                                 <vacancy>0.00</vacancy>
                             </staffingEndYear>
                         </employees>
                         <salary>
                             <salaryFund>
-                                <total>1256981.34</total>
-                                <base>1256981.34</base>
-                                <baseFullTime>1256981.34</baseFullTime>
+                                <total>8875988.36</total>
+                                <base>8875988.36</base>
+                                <baseFullTime>8875988.36</baseFullTime>
                                 <mainPartTme>0.00</mainPartTme>
                                 <insideCombining>0.00</insideCombining>
                                 <outside>0.00</outside>
@@ -1110,8 +1110,8 @@
                             </accrued>
                             <salaryAnalytic>
                                 <baseWorkplace>
-                                    <subsidiesContract>1256981.34</subsidiesContract>
-                                    <subsidiesOther>0.00</subsidiesOther>
+                                    <subsidiesContract>8376481.79</subsidiesContract>
+                                    <subsidiesOther>499506.57</subsidiesOther>
                                     <subsidiesGrantFederal>0.00</subsidiesGrantFederal>
                                     <subsidiesGrantRegional>0.00</subsidiesGrantRegional>
                                     <oms>0.00</oms>
@@ -1167,18 +1167,18 @@
                         </typeObject>
                         <estateObject>
                             <name>в том числе:</name>
-                            <address>Омская область, Горьковский район, д.Чучкино,ул.Переулок
-                                Зеленый,3</address>
+                            <address>Омская область, Горьковский район, р.п.Горьковское,ул.Павлтка
+                                Морозова,10</address>
                             <cadNumber>55:04:050301:347</cadNumber>
                             <oktmo>
                                 <code>52509000</code>
                                 <name>Name</name>
                             </oktmo>
                             <uniqueObjectCode>25</uniqueObjectCode>
-                            <buildingYear>1977</buildingYear>
+                            <buildingYear>1964</buildingYear>
                             <unit>
                                 <code>055</code>
-                                <symbol>Квадратный метр</symbol>
+                                <symbol>условная штука</symbol>
                             </unit>
                             <typeObject>
                                 <type>1000</type>
@@ -1192,12 +1192,12 @@
                             </used>
                             <actualExpenses>
                                 <utilities>
-                                    <total>722384.43</total>
+                                    <total>4845090.86</total>
                                     <reimbursedByUsers>0</reimbursedByUsers>
                                     <unusedProperty>0</unusedProperty>
                                 </utilities>
                                 <propertyMaintenanceServices>
-                                    <total>240038.43</total>
+                                    <total>1300023.52</total>
                                     <reimbursedByUsers>0</reimbursedByUsers>
                                     <unusedProperty>0</unusedProperty>
                                 </propertyMaintenanceServices>
@@ -1206,7 +1206,95 @@
                                     <reimbursedByUsers>0</reimbursedByUsers>
                                     <unusedProperty>0</unusedProperty>
                                 </propertyTax>
-                                <total>962422.86</total>
+                                <total>6145114.38</total>
+                            </actualExpenses>
+                        </estateObject>
+                        <estateObject>
+                            <name>Нежилое помещение (школа)</name>
+                            <address>Омская область, Горьковский район, р.п.Горьковское,ул. Ленина,
+                                26а</address>
+                            <cadNumber>55:04:050301:347</cadNumber>
+                            <oktmo>
+                                <code>52509000</code>
+                                <name>Name</name>
+                            </oktmo>
+                            <uniqueObjectCode>29</uniqueObjectCode>
+                            <buildingYear>2023</buildingYear>
+                            <unit>
+                                <code>055</code>
+                                <symbol>условная штука</symbol>
+                            </unit>
+                            <typeObject>
+                                <type>1000</type>
+                                <lineCode>1100</lineCode>
+                            </typeObject>
+                            <used>
+                                <total>1</total>
+                                <mainPurposeTask>1</mainPurposeTask>
+                                <mainPurposeOverTask>0</mainPurposeOverTask>
+                                <otherPurpose>0</otherPurpose>
+                            </used>
+                            <actualExpenses>
+                                <utilities>
+                                    <total>0</total>
+                                    <reimbursedByUsers>0</reimbursedByUsers>
+                                    <unusedProperty>0</unusedProperty>
+                                </utilities>
+                                <propertyMaintenanceServices>
+                                    <total>0</total>
+                                    <reimbursedByUsers>0</reimbursedByUsers>
+                                    <unusedProperty>0</unusedProperty>
+                                </propertyMaintenanceServices>
+                                <propertyTax>
+                                    <total>0</total>
+                                    <reimbursedByUsers>0</reimbursedByUsers>
+                                    <unusedProperty>0</unusedProperty>
+                                </propertyTax>
+                                <total>0</total>
+                            </actualExpenses>
+                        </estateObject>
+                        <estateObject>
+                            <name>Нежилое помещение (физкультурно-оздоровительный корпус)</name>
+                            <address>Омская область, Горьковский район, р.п.Горьковское,ул. Ленина,
+                                26а корпус 1</address>
+                            <cadNumber>55:04:050301:347</cadNumber>
+                            <oktmo>
+                                <code>52509000</code>
+                                <name>Name</name>
+                            </oktmo>
+                            <uniqueObjectCode>31</uniqueObjectCode>
+                            <buildingYear>2024</buildingYear>
+                            <unit>
+                                <code>055</code>
+                                <symbol>условная штука</symbol>
+                            </unit>
+                            <typeObject>
+                                <type>1000</type>
+                                <lineCode>1100</lineCode>
+                            </typeObject>
+                            <used>
+                                <total>1</total>
+                                <mainPurposeTask>1</mainPurposeTask>
+                                <mainPurposeOverTask>0</mainPurposeOverTask>
+                                <otherPurpose>0</otherPurpose>
+                            </used>
+                            <actualExpenses>
+                                <utilities>
+                                    <total>0</total>
+                                    <reimbursedByUsers>0</reimbursedByUsers>
+                                    <unusedProperty>0</unusedProperty>
+                                </utilities>
+                                <propertyMaintenanceServices>
+                                    <total>0</total>
+                                    <reimbursedByUsers>0</reimbursedByUsers>
+                                    <unusedProperty>0</unusedProperty>
+                                </propertyMaintenanceServices>
+                                <propertyTax>
+                                    <total>0</total>
+                                    <reimbursedByUsers>0</reimbursedByUsers>
+                                    <unusedProperty>0</unusedProperty>
+                                </propertyTax>
+                                <total>0</total>
                             </actualExpenses>
                         </estateObject>
                     </estateExceptLandObjects>
@@ -1214,18 +1302,19 @@
                 <landPermanentUse>
                     <lendObject>
                         <name>Земельный участок</name>
-                        <address>Омская область, Горьковский район, д. Чучкино, ул.пер Зеленый, 3</address>
+                        <address>Омская область, Горьковский район, р.п. Горьковское, ул. П.
+                            Морозова,10</address>
                         <oktmo>
-                            <code>00000000</code>
+                            <code>52509000</code>
                             <name>name</name>
                         </oktmo>
-                        <cadNumber>00000</cadNumber>
+                        <cadNumber>55:04:120103:1141</cadNumber>
                         <unit>
-                            <code>1000</code>
-                            <symbol>Условная штука</symbol>
+                            <code>055</code>
+                            <symbol>Квадратный метр</symbol>
                         </unit>
                         <lendObjectUse>
-                            <lineCode>1000</lineCode>
+                            <lineCode>1001</lineCode>
                             <total>1</total>
                             <used>
                                 <total>1</total>
@@ -1242,27 +1331,28 @@
                                 <temporaryUsedOther>0.00</temporaryUsedOther>
                             </notUsed>
                             <expensesForLand>
-                                <total>7594</total>
+                                <total>21652</total>
                                 <costsTotal>0.00</costsTotal>
                                 <costsRefund>0.00</costsRefund>
-                                <landTax>7594</landTax>
+                                <landTax>21652</landTax>
                             </expensesForLand>
                         </lendObjectUse>
                     </lendObject>
                     <lendObject>
-                        <name>etyjetyj</name>
-                        <address>ergjery</address>
+                        <name>Земельный участок</name>
+                        <address>Омская область, Горьковский район, р.п. Горьковское, ул. П.
+                            Морозова,10</address>
                         <oktmo>
-                            <code>00000000</code>
+                            <code>52509000</code>
                             <name>name</name>
                         </oktmo>
-                        <cadNumber>000000000</cadNumber>
+                        <cadNumber>55:04:120103:1141</cadNumber>
                         <unit>
-                            <code>1000</code>
-                            <symbol>000</symbol>
+                            <code>055</code>
+                            <symbol>Квадратный метр</symbol>
                         </unit>
                         <lendObjectUse>
-                            <lineCode>1000</lineCode>
+                            <lineCode>1002</lineCode>
                             <total>1</total>
                             <used>
                                 <total>1</total>
@@ -1279,10 +1369,86 @@
                                 <temporaryUsedOther>0.00</temporaryUsedOther>
                             </notUsed>
                             <expensesForLand>
-                                <total>7594</total>
+                                <total>21652</total>
                                 <costsTotal>0.00</costsTotal>
                                 <costsRefund>0.00</costsRefund>
-                                <landTax>7594</landTax>
+                                <landTax>21652</landTax>
+                            </expensesForLand>
+                        </lendObjectUse>
+                    </lendObject>
+                    <lendObject>
+                        <name>Земельный участок</name>
+                        <address>Омская область, Горьковский район, р.п. Горьковское, ул. П.
+                            Морозова,10</address>
+                        <oktmo>
+                            <code>52509000</code>
+                            <name>name</name>
+                        </oktmo>
+                        <cadNumber>55:04:120103:1141</cadNumber>
+                        <unit>
+                            <code>055</code>
+                            <symbol>Квадратный метр</symbol>
+                        </unit>
+                        <lendObjectUse>
+                            <lineCode>1003</lineCode>
+                            <total>1</total>
+                            <used>
+                                <total>1</total>
+                                <mainPurposeTask>1</mainPurposeTask>
+                                <mainPurposeOverTask>0.00</mainPurposeOverTask>
+                                <usedOther>0.00</usedOther>
+                            </used>
+                            <usedByEasement>0.00</usedByEasement>
+                            <notUsed>
+                                <total>0.00</total>
+                                <temporaryUsedRent>0.00</temporaryUsedRent>
+                                <temporaryUsedFree>0.00</temporaryUsedFree>
+                                <temporaryUsedWithoutRigt>0.00</temporaryUsedWithoutRigt>
+                                <temporaryUsedOther>0.00</temporaryUsedOther>
+                            </notUsed>
+                            <expensesForLand>
+                                <total>21652</total>
+                                <costsTotal>0.00</costsTotal>
+                                <costsRefund>0.00</costsRefund>
+                                <landTax>21652</landTax>
+                            </expensesForLand>
+                        </lendObjectUse>
+                    </lendObject>
+                    <lendObject>
+                        <name>Земельный участок</name>
+                        <address>Омская область, Горьковский район, р.п. Горьковское, ул. П.
+                            Ленина,26а</address>
+                        <oktmo>
+                            <code>52509000</code>
+                            <name>name</name>
+                        </oktmo>
+                        <cadNumber>55:04:120103:1141</cadNumber>
+                        <unit>
+                            <code>055</code>
+                            <symbol>Квадратный метр</symbol>
+                        </unit>
+                        <lendObjectUse>
+                            <lineCode>1004</lineCode>
+                            <total>1</total>
+                            <used>
+                                <total>1</total>
+                                <mainPurposeTask>1</mainPurposeTask>
+                                <mainPurposeOverTask>0.00</mainPurposeOverTask>
+                                <usedOther>0.00</usedOther>
+                            </used>
+                            <usedByEasement>0.00</usedByEasement>
+                            <notUsed>
+                                <total>0.00</total>
+                                <temporaryUsedRent>0.00</temporaryUsedRent>
+                                <temporaryUsedFree>0.00</temporaryUsedFree>
+                                <temporaryUsedWithoutRigt>0.00</temporaryUsedWithoutRigt>
+                                <temporaryUsedOther>0.00</temporaryUsedOther>
+                            </notUsed>
+                            <expensesForLand>
+                                <total>21653</total>
+                                <costsTotal>0.00</costsTotal>
+                                <costsRefund>0.00</costsRefund>
+                                <landTax>21653</landTax>
                             </expensesForLand>
                         </lendObjectUse>
                     </lendObject>
@@ -1311,185 +1477,6 @@
                         </expensesForLand>
                     </lendObjectUse>
                 </landPermanentUse>
-                <valuableMovableProperty>
-                    <!-- Сведения об особо ценном движимом имуществе (за исключение
-                    м транспортны х средств)  -->
-                    <valuableMovablePropertyObjects>
-                        <typeMovableObject>
-                            <type>1000</type>
-                            <lineCode>0000</lineCode>
-                        </typeMovableObject>
-                        <valuableMovablePropertyObject>
-                            <name>name1</name>
-                            <typeMovableObject>
-                                <type>1000</type>
-                                <lineCode>0000</lineCode>
-                            </typeMovableObject>
-                            <availabilityEndPeriod>
-                                <total>60</total>
-                                <usedByAgency>60</usedByAgency>
-                                <transferredForUseTotal>60</transferredForUseTotal>
-                                <forRent>60</forRent>
-                                <forFree>60</forFree>
-                                <needRepair>60</needRepair>
-                                <waitWriteOffTotal>60</waitWriteOffTotal>
-                                <waitWriteOffReplace>60</waitWriteOffReplace>
-                            </availabilityEndPeriod>
-                            <actualTermOfUse>
-                                <actualTerm>Over121</actualTerm>
-                                <count>60</count>
-                                <cost>60</cost>
-                            </actualTermOfUse>
-                            <actualTermOfUse>
-                                <actualTerm>From85To120</actualTerm>
-                                <count>20</count>
-                                <cost>20</cost>
-                            </actualTermOfUse>
-                            <actualTermOfUse>
-                                <actualTerm>From61To84</actualTerm>
-                                <count>70</count>
-                                <cost>70</cost>
-                            </actualTermOfUse>
-                            <residualValue>
-                                <ValueTerm>less12</ValueTerm>
-                                <cost>60</cost>
-                            </residualValue>
-                            <residualValue>
-                                <ValueTerm>from12To24</ValueTerm>
-                                <cost>20</cost>
-                            </residualValue>
-                            <residualValue>
-                                <ValueTerm>from25To36</ValueTerm>
-                                <cost>70</cost>
-                            </residualValue>
-                        </valuableMovablePropertyObject>
-                        <valuableMovablePropertyObject>
-                            <name>name2</name>
-                            <typeMovableObject>
-                                <type>2000</type>
-                                <lineCode>0000</lineCode>
-                            </typeMovableObject>
-                            <availabilityEndPeriod>
-                                <total>20</total>
-                                <usedByAgency>20</usedByAgency>
-                                <transferredForUseTotal>20</transferredForUseTotal>
-                                <forRent>20</forRent>
-                                <forFree>20</forFree>
-                                <needRepair>20</needRepair>
-                                <waitWriteOffTotal>20</waitWriteOffTotal>
-                                <waitWriteOffReplace>20</waitWriteOffReplace>
-                            </availabilityEndPeriod>
-                            <actualTermOfUse>
-                                <actualTerm>From37To60</actualTerm>
-                                <count>60.0000000000</count>
-                                <cost>60.0000000000</cost>
-                            </actualTermOfUse>
-                            <actualTermOfUse>
-                                <actualTerm>From13To36</actualTerm>
-                                <count>60.0000000000</count>
-                                <cost>60.0000000000</cost>
-                            </actualTermOfUse>
-                            <actualTermOfUse>
-                                <actualTerm>Less120</actualTerm>
-                                <count>20</count>
-                                <cost>20</cost>
-                            </actualTermOfUse>
-                            <residualValue>
-                                <ValueTerm>from37To48</ValueTerm>
-                                <cost>60.0000000000</cost>
-                            </residualValue>
-                            <residualValue>
-                                <ValueTerm>from49To60</ValueTerm>
-                                <cost>60.0000000000</cost>
-                            </residualValue>
-                            <residualValue>
-                                <ValueTerm>from61To72</ValueTerm>
-                                <cost>20</cost>
-                            </residualValue>
-                        </valuableMovablePropertyObject>
-                        <valuableMovablePropertyObject>
-                            <name>name3</name>
-                            <typeMovableObject>
-                                <type>3000</type>
-                                <lineCode>0000</lineCode>
-                            </typeMovableObject>
-                            <availabilityEndPeriod>
-                                <total>70</total>
-                                <usedByAgency>70</usedByAgency>
-                                <transferredForUseTotal>70</transferredForUseTotal>
-                                <forRent>70</forRent>
-                                <forFree>70</forFree>
-                                <needRepair>70</needRepair>
-                                <waitWriteOffTotal>70</waitWriteOffTotal>
-                                <waitWriteOffReplace>70</waitWriteOffReplace>
-                            </availabilityEndPeriod>
-                            <actualTermOfUse>
-                                <actualTerm>Over121</actualTerm>
-                                <count>70</count>
-                                <cost>70</cost>
-                            </actualTermOfUse>
-                            <actualTermOfUse>
-                                <actualTerm>From85To120</actualTerm>
-                                <count>60.0000000000</count>
-                                <cost>60.0000000000</cost>
-                            </actualTermOfUse>
-                            <actualTermOfUse>
-                                <actualTerm>From61To84</actualTerm>
-                                <count>60.0000000000</count>
-                                <cost>60.0000000000</cost>
-                            </actualTermOfUse>
-                            <residualValue>
-                                <ValueTerm>from73To84</ValueTerm>
-                                <cost>70</cost>
-                            </residualValue>
-                            <residualValue>
-                                <ValueTerm>from85To96</ValueTerm>
-                                <cost>60.0000000000</cost>
-                            </residualValue>
-                            <residualValue>
-                                <ValueTerm>from97To108</ValueTerm>
-                                <cost>60.0000000000</cost>
-                            </residualValue>
-                        </valuableMovablePropertyObject>
-                        <availabilityEndPeriod>
-                            <total>60</total>
-                            <usedByAgency>60</usedByAgency>
-                            <transferredForUseTotal>60</transferredForUseTotal>
-                            <forRent>60</forRent>
-                            <forFree>60</forFree>
-                            <needRepair>60</needRepair>
-                            <waitWriteOffTotal>60</waitWriteOffTotal>
-                            <waitWriteOffReplace>60</waitWriteOffReplace>
-                        </availabilityEndPeriod>
-                        <actualTermOfUse>
-                            <actualTerm>Over121</actualTerm>
-                            <count>60</count>
-                            <cost>60</cost>
-                        </actualTermOfUse>
-                        <actualTermOfUse>
-                            <actualTerm>From85To120</actualTerm>
-                            <count>20</count>
-                            <cost>20</cost>
-                        </actualTermOfUse>
-                        <actualTermOfUse>
-                            <actualTerm>From61To84</actualTerm>
-                            <count>70</count>
-                            <cost>70</cost>
-                        </actualTermOfUse>
-                        <residualValue>
-                            <ValueTerm>less12</ValueTerm>
-                            <cost>60</cost>
-                        </residualValue>
-                        <residualValue>
-                            <ValueTerm>from12To24</ValueTerm>
-                            <cost>20</cost>
-                        </residualValue>
-                        <residualValue>
-                            <ValueTerm>from25To36</ValueTerm>
-                            <cost>70</cost>
-                        </residualValue>
-                    </valuableMovablePropertyObjects>
-                </valuableMovableProperty>
                 <vehicles>
                     <!-- Сведения о транспортны х средствах  -->
                     <usedVehicles>
@@ -1505,79 +1492,29 @@
                                     <lineCode>1500</lineCode>
                                 </TransportsType>
                                 <total>
-                                    <endDate>60</endDate>
-                                    <middleOfYear>60</middleOfYear>
+                                    <endDate>5</endDate>
+                                    <middleOfYear>5</middleOfYear>
                                 </total>
                                 <operationManagment>
-                                    <endDate>60</endDate>
-                                    <middleOfYear>60</middleOfYear>
+                                    <endDate>5</endDate>
+                                    <middleOfYear>5</middleOfYear>
                                 </operationManagment>
-                                <underLease>
-                                    <endDate>60</endDate>
-                                    <middleOfYear>60</middleOfYear>
-                                </underLease>
-                                <underGratuitous>
-                                    <endDate>60</endDate>
-                                    <middleOfYear>60</middleOfYear>
-                                </underGratuitous>
                             </vehiclesDetails>
-                            <total>
-                                <endDate>0</endDate>
-                                <middleOfYear>0</middleOfYear>
-                            </total>
-                            <operationManagment>
-                                <endDate>0</endDate>
-                                <middleOfYear>0</middleOfYear>
-                            </operationManagment>
-                            <underLease>
-                                <!-- <endDate>60</endDate>
-                                <middleOfYear>60</middleOfYear> -->
-                            </underLease>
-                            <underGratuitous>
-                                <!-- <endDate>60</endDate>
-                                <middleOfYear>60</middleOfYear> -->
-                            </underGratuitous>
                         </usedVehiclesTransports>
                     </usedVehicles>
                     <notUsedVehicles>
                         <notUsedVehiclesTransports>
                             <TransportsType>
-                                <type>2000</type>
-                                <lineCode>2000</lineCode>
+                                <type>1000</type>
+                                <lineCode>1000</lineCode>
                             </TransportsType>
-                            <notUsedVehiclesTransport>
+                            <!-- <notUsedVehiclesTransport>
                                 <TransportsType>
-                                    <type>2000</type>
-                                    <lineCode>2100</lineCode>
+                                    <type>1000</type>
+                                    <lineCode>1500</lineCode>
                                 </TransportsType>
                                 <name>name1</name>
-                                <temporaryUsedOther>
-                                    <total>0</total>
-                                    <temporaryUsedRent>0</temporaryUsedRent>
-                                    <temporaryUsedFree>0</temporaryUsedFree>
-                                    <temporaryUsedWithoutRigt>0</temporaryUsedWithoutRigt>
-                                </temporaryUsedOther>
-                                <notUsed>
-                                    <total>0</total>
-                                    <underConstraction>0</underConstraction>
-                                    <needConstraction>0</needConstraction>
-                                    <waitOffs>0</waitOffs>
-                                    <excessProperty>0</excessProperty>
-                                </notUsed>
-                            </notUsedVehiclesTransport>
-                            <temporaryUsedOther>
-                                <total>0</total>
-                                <temporaryUsedRent>0</temporaryUsedRent>
-                                <temporaryUsedFree>0</temporaryUsedFree>
-                                <temporaryUsedWithoutRigt>0</temporaryUsedWithoutRigt>
-                            </temporaryUsedOther>
-                            <notUsed>
-                                <total>0</total>
-                                <underConstraction>0</underConstraction>
-                                <needConstraction>0</needConstraction>
-                                <waitOffs>0</waitOffs>
-                                <excessProperty>0</excessProperty>
-                            </notUsed>
+                            </notUsedVehiclesTransport> -->
                         </notUsedVehiclesTransports>
                     </notUsedVehicles>
                     <directionOfUse>
@@ -1586,11 +1523,11 @@
                                 <type>9000</type>
                                 <lineCode>9000</lineCode>
                             </TransportsType>
-                            <directionOfUseTransport>
+                            <!-- <directionOfUseTransport>
                                 <name>name1</name>
                                 <TransportsType>
-                                    <type>2000</type>
-                                    <lineCode>2000</lineCode>
+                                    <type>1000</type>
+                                    <lineCode>1000</lineCode>
                                 </TransportsType>
                                 <directlyUsedVehicles>
                                     <total>
@@ -1612,103 +1549,107 @@
                                 </directlyUsedVehicles>
                                 <purposeServicingPersonnel>
                                     <total>
-                                        <endDate>20</endDate>
-                                        <middleOfYear>20</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </total>
                                     <operationManagment>
-                                        <endDate>20</endDate>
-                                        <middleOfYear>20</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </operationManagment>
                                     <underLease>
-                                        <endDate>20</endDate>
-                                        <middleOfYear>20</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </underLease>
                                     <underGratuitous>
-                                        <endDate>20</endDate>
-                                        <middleOfYear>20</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </underGratuitous>
                                 </purposeServicingPersonnel>
                                 <otherPurposes>
                                     <total>
-                                        <endDate>70</endDate>
-                                        <middleOfYear>70</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </total>
                                     <operationManagment>
-                                        <endDate>70</endDate>
-                                        <middleOfYear>70</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </operationManagment>
                                     <underLease>
-                                        <endDate>70</endDate>
-                                        <middleOfYear>70</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </underLease>
                                     <underGratuitous>
-                                        <endDate>70</endDate>
-                                        <middleOfYear>70</middleOfYear>
+                                        <endDate>0</endDate>
+                                        <middleOfYear>0</middleOfYear>
                                     </underGratuitous>
                                 </otherPurposes>
                             </directionOfUseTransport>
-                            <directlyUsedVehicles>
-                                <total>
-                                    <endDate>20</endDate>
-                                    <middleOfYear>20</middleOfYear>
-                                </total>
-                                <operationManagment>
-                                    <endDate>20</endDate>
-                                    <middleOfYear>20</middleOfYear>
-                                </operationManagment>
-                                <underLease>
-                                    <endDate>20</endDate>
-                                    <middleOfYear>20</middleOfYear>
-                                </underLease>
-                                <underGratuitous>
-                                    <endDate>20</endDate>
-                                    <middleOfYear>20</middleOfYear>
-                                </underGratuitous>
-                            </directlyUsedVehicles>
                             <purposeServicingPersonnel>
                                 <total>
-                                    <endDate>70</endDate>
-                                    <middleOfYear>70</middleOfYear>
+                                    <endDate>0</endDate>
+                                    <middleOfYear>0</middleOfYear>
                                 </total>
                                 <operationManagment>
-                                    <endDate>70</endDate>
-                                    <middleOfYear>70</middleOfYear>
+                                    <endDate>0</endDate>
+                                    <middleOfYear>0</middleOfYear>
                                 </operationManagment>
                                 <underLease>
-                                    <endDate>70</endDate>
-                                    <middleOfYear>70</middleOfYear>
+                                    <endDate>0</endDate>
+                                    <middleOfYear>0</middleOfYear>
                                 </underLease>
                                 <underGratuitous>
-                                    <endDate>70</endDate>
-                                    <middleOfYear>70</middleOfYear>
+                                    <endDate>0</endDate>
+                                    <middleOfYear>0</middleOfYear>
                                 </underGratuitous>
                             </purposeServicingPersonnel>
                             <otherPurposes>
                                 <total>
-                                    <endDate>60.0000000000</endDate>
-                                    <middleOfYear>60.0000000000</middleOfYear>
+                                    <endDate>555</endDate>
+                                    <middleOfYear>555</middleOfYear>
                                 </total>
                                 <operationManagment>
-                                    <endDate>60.0000000000</endDate>
-                                    <middleOfYear>60.0000000000</middleOfYear>
+                                    <endDate>555</endDate>
+                                    <middleOfYear>555</middleOfYear>
                                 </operationManagment>
                                 <underLease>
-                                    <endDate>60.0000000000</endDate>
-                                    <middleOfYear>60.0000000000</middleOfYear>
+                                    <endDate>555</endDate>
+                                    <middleOfYear>555</middleOfYear>
                                 </underLease>
                                 <underGratuitous>
-                                    <endDate>60.0000000000</endDate>
-                                    <middleOfYear>60.0000000000</middleOfYear>
+                                    <endDate>555</endDate>
+                                    <middleOfYear>555</middleOfYear>
                                 </underGratuitous>
-                            </otherPurposes>
+                            </otherPurposes> -->
                         </directionOfUseTransports>
                     </directionOfUse>
                     <costMaintenanceVehicles>
                         <costMaintenanceVehiclesTransports>
                             <TransportsType>
-                                <type>2000</type>
-                                <lineCode>2000</lineCode>
+                                <type>1000</type>
+                                <lineCode>1000</lineCode>
                             </TransportsType>
+                            <costMaintenanceVehiclesTransport>
+                                <name>drfgv</name>
+                                <TransportsType>
+                                    <type>1000</type>
+                                    <lineCode>1500</lineCode>
+                                </TransportsType>
+                                <vehiclesExpensesMaintenance>
+                                    <periodTotal>12</periodTotal>
+                                    <transportTax>1</transportTax>
+                                    <fuelCosts>1</fuelCosts>
+                                    <wheelCosts>1</wheelCosts>
+                                    <osagoCosts>1</osagoCosts>
+                                    <volunteerInsuranceCosts>1</volunteerInsuranceCosts>
+                                    <repairsCosts>1</repairsCosts>
+                                    <maintenanceCosts>1</maintenanceCosts>
+                                    <garagesRent>1</garagesRent>
+                                    <garagesMaintenance>1</garagesMaintenance>
+                                    <drivers>1</drivers>
+                                    <servisesPersonnel>1</servisesPersonnel>
+                                    <administrativePersonnel>1</administrativePersonnel>
+                                </vehiclesExpensesMaintenance>
+                            </costMaintenanceVehiclesTransport>
                         </costMaintenanceVehiclesTransports>
                     </costMaintenanceVehicles>
                 </vehicles>

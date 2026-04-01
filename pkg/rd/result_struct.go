@@ -319,6 +319,8 @@ type AssetsUse struct {
 	Xmlns            string   `xml:"xmlns,attr"`
 	EstateExceptLand EstateExceptLand
 	LandPermanentUse LandPermanentUse
+	// ValuableMovableProperty ValuableMovableProperty
+	Vehicles Vehicles
 }
 
 // Сведения о недвижимом имуществе, за исключение м земельных  участков,
@@ -405,19 +407,19 @@ type LandPermanentUse struct {
 }
 type LendObject struct {
 	XMLName       xml.Name `xml:"lendObject"`
-	Name          string
-	Address       string
+	Name          string   `xml:"name"`
+	Address       string   `xml:"address"`
 	Oktmo         Oktmo
-	CadNumber     string
+	CadNumber     string `xml:"cadNumber"`
 	Unit          Unit
 	LendObjectUse LendObjectUse
 }
 type LendObjectUse struct {
 	XMLName         xml.Name `xml:"lendObjectUse"`
-	LineCode        string
-	Total           string
+	LineCode        string   `xml:"lineCode"`
+	Total           string   `xml:"total"`
 	Used            UsedL
-	UsedByEasement  string
+	UsedByEasement  string `xml:"usedByEasement"`
 	NotUsed         NotUsed
 	ExpensesForLand ExpensesForLand
 }
@@ -496,6 +498,120 @@ type ResidualValue struct {
 	Cost      string   `xml:"cost"`
 }
 
+// ==============================
+// Транспортные средства
+// ==============================
+
+type Vehicles struct {
+	XMLName                 xml.Name `xml:"vehicles"`
+	UsedVehicles            UsedVehicles
+	NotUsedVehicles         NotUsedVehicles
+	DirectionOfUse          DirectionOfUse
+	CostMaintenanceVehicles CostMaintenanceVehicles
+}
+
+type UsedVehicles struct {
+	XMLName                xml.Name `xml:"usedVehicles"`
+	UsedVehiclesTransports UsedVehiclesTransports
+}
+
+type UsedVehiclesTransports struct {
+	XMLName         xml.Name `xml:"usedVehiclesTransports"`
+	TransportsType  TransportsType
+	VehiclesDetails VehiclesDetails
+}
+
+type TransportsType struct {
+	XMLName    xml.Name `xml:"TransportsType"`
+	TranspType string   `xml:"type"`
+	LineCode   string   `xml:"lineCode"`
+}
+type VehiclesDetails struct {
+	XMLName            xml.Name `xml:"vehiclesDetails"`
+	Name               string   `xml:"name"`
+	TransportsType     TransportsType
+	Total              Total
+	OperationManagment OperationManagment
+}
+
+type Total struct {
+	XMLName      xml.Name `xml:"total"`
+	EndDate      string   `xmk:"endDate"`
+	MiddleOfYear string   `xmk:"middleOfYear"`
+}
+
+type OperationManagment struct {
+	XMLName      xml.Name `xml:"operationManagment"`
+	EndDate      string   `xml:"endDate"`
+	MiddleOfYear string   `xml:"middleOfYear"`
+}
+
+type NotUsedVehicles struct {
+	XMLName        xml.Name `xml:"notUsedVehicles"`
+	TransportsType TransportsType
+}
+
+type DirectionOfUse struct {
+	XMLName                  xml.Name `xml:"directionOfUse"`
+	DirectionOfUseTransports DirectionOfUseTransports
+}
+type DirectionOfUseTransports struct {
+	XMLName                 xml.Name `xml:"directionOfUseTransports"`
+	TransportsType          TransportsType
+	DirectionOfUseTransport DirectionOfUseTransport
+}
+type DirectionOfUseTransport struct {
+	XMLName              xml.Name `xml:"directionOfUseTransport"`
+	Name                 string   `xml:"name"`
+	TransportsType       TransportsType
+	DirectlyUsedVehicles DirectlyUsedVehicles
+	// PurposeServicingPersonnel PurposeServicingPersonnel
+}
+
+type DirectlyUsedVehicles struct {
+	XMLName            xml.Name `xml:"directlyUsedVehicles"`
+	Total              Total
+	OperationManagment OperationManagment
+	// UnderLease         UnderLease
+	// UnderGratuitous    UnderGratuitous
+}
+
+type CostMaintenanceVehicles struct {
+	XMLName                           xml.Name `xml:"costMaintenanceVehicles"`
+	CostMaintenanceVehiclesTransports []CostMaintenanceVehiclesTransports
+}
+type CostMaintenanceVehiclesTransports struct {
+	XMLName                          xml.Name `xml:"costMaintenanceVehiclesTransports"`
+	TransportsType                   TransportsType
+	CostMaintenanceVehiclesTransport CostMaintenanceVehiclesTransport
+}
+
+type CostMaintenanceVehiclesTransport struct {
+	XMLName                     xml.Name `xml:"costMaintenanceVehiclesTransport"`
+	Name                        string   `xml:"name"`
+	TransportsType              TransportsType
+	VehiclesExpensesMaintenance VehiclesExpensesMaintenance
+}
+type VehiclesExpensesMaintenance struct {
+	XMLName                 xml.Name `xml:"vehiclesExpensesMaintenance"`
+	PeriodTotal             string   `xml:"periodTotal"`
+	TransportTax            string   `xml:"transportTax"`
+	FuelCosts               string   `xml:"fuelCosts"`
+	WheelCosts              string   `xml:"wheelCosts"`
+	OsagoCosts              string   `xml:"osagoCosts"`
+	VolunteerInsuranceCosts string   `xml:"volunteerInsuranceCosts"`
+	RepairsCosts            string   `xml:"repairsCosts"`
+	MaintenanceCosts        string   `xml:"maintenanceCosts"`
+	GaragesRent             string   `xml:"garagesRent"`
+	GaragesMaintenance      string   `xml:"garagesMaintenance"`
+	Drivers                 string   `xml:"drivers"`
+	ServisesPersonnel       string   `xml:"servisesPersonnel"`
+	AdministrativePersonnel string   `xml:"administrativePersonnel"`
+}
+
+// ==============================
+// ==============================
+// ==============================
 type ValuableMovablePropertyObjects struct {
 	XMLName xml.Name `xml:"valuableMovablePropertyObjects"`
 }

@@ -324,9 +324,6 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
-	// s1 := [2]int{25, 29}
-
-	// TODO обработать в цикле
 
 	actualExpenses := ActualExpenses{
 		Utilities: Utilities{
@@ -414,10 +411,60 @@ func ProcessFile(filePath string) error {
 		},
 	}
 
+	// ===================================
 	// Сведения о земельных участках, предоставленных на праве постоянного
 	// (бессрочного ) пользования
+	// ===================================
+	rows, err = f.GetRows("Лист17")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+
 	lendObject := []LendObject{}
-	// TODO Обработать в цикле
+
+	for i := 26; i < 31; i++ {
+		if len(rows[i]) < 136 {
+			continue
+		}
+
+		lendObject = append(lendObject, LendObject{
+			Name:    rows[i][0],
+			Address: rows[i][14],
+			Oktmo: Oktmo{
+				Code: rows[i][23],
+				Name: "name",
+			},
+			CadNumber: rows[i][28],
+			Unit: Unit{
+				Code:   rows[i][41],
+				Symbol: rows[i][34],
+			},
+			LendObjectUse: LendObjectUse{
+				LineCode: rows[i][46],
+				Total:    rows[i][51],
+				Used: UsedL{
+					Total:               rows[i][57],
+					MainPurposeTask:     rows[i][63],
+					MainPurposeOverTask: getFinLen(rows[i], 69),
+					UsedOther:           getFinLen(rows[i], 75),
+				},
+				UsedByEasement: getFinLen(rows[i], 81),
+				NotUsed: NotUsed{
+					Total:                    getFinLen(rows[i], 87),
+					TemporaryUsedRent:        getFinLen(rows[i], 93),
+					TemporaryUsedFree:        getFinLen(rows[i], 99),
+					TemporaryUsedWithoutRigt: getFinLen(rows[i], 105),
+					TemporaryUsedOther:       getFinLen(rows[i], 111),
+				},
+				ExpensesForLand: ExpensesForLand{
+					Total:       getFinLen(rows[i], 117),
+					CostsTotal:  getFinLen(rows[i], 123),
+					CostsRefund: getFinLen(rows[i], 129),
+					LandTax:     getFinLen(rows[i], 135),
+				},
+			},
+		})
+	}
 
 	landPermanentUse := LandPermanentUse{
 		LendObject: lendObject,
@@ -447,10 +494,21 @@ func ProcessFile(filePath string) error {
 		},
 	}
 
+	// ==============================
+	// Транспортные средства
+	// ==============================
+	vehicles := Vehicles{
+		UsedVehicles:            UsedVehicles{},
+		NotUsedVehicles:         NotUsedVehicles{},
+		DirectionOfUse:          DirectionOfUse{},
+		CostMaintenanceVehicles: CostMaintenanceVehicles{},
+	}
+
 	position.AssetsUse = AssetsUse{
 		Xmlns:            "http://bus.gov.ru/types/1",
 		EstateExceptLand: estateExceptLand,
 		LandPermanentUse: landPermanentUse,
+		Vehicles:         vehicles,
 	}
 
 	doc := ReportActivityResult{
