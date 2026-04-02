@@ -315,12 +315,12 @@ type CreditAccountsCurrency struct {
 
 // сведения о имуществе
 type AssetsUse struct {
-	XMLName          xml.Name `xml:"assetsUse"`
-	Xmlns            string   `xml:"xmlns,attr"`
-	EstateExceptLand EstateExceptLand
-	LandPermanentUse LandPermanentUse
-	// ValuableMovableProperty ValuableMovableProperty
-	Vehicles Vehicles
+	XMLName                 xml.Name `xml:"assetsUse"`
+	Xmlns                   string   `xml:"xmlns,attr"`
+	EstateExceptLand        EstateExceptLand
+	LandPermanentUse        LandPermanentUse
+	ValuableMovableProperty ValuableMovableProperty
+	Vehicles                Vehicles
 }
 
 // Сведения о недвижимом имуществе, за исключение м земельных  участков,
@@ -453,11 +453,6 @@ type ExpensesForLand struct {
 type ValuableMovableProperty struct {
 	XMLName                        xml.Name `xml:"valuableMovableProperty"`
 	ValuableMovablePropertyObjects ValuableMovablePropertyObjects
-	TypeMovableObject              TypeMovableObject
-	ValuableMovablePropertyObject  []ValuableMovablePropertyObject
-	AvailabilityEndPeriod          AvailabilityEndPeriod
-	ActualTermOfUse                ActualTermOfUse
-	ResidualValue                  ResidualValue
 }
 
 type TypeMovableObject struct {
@@ -468,11 +463,11 @@ type TypeMovableObject struct {
 
 type ValuableMovablePropertyObject struct {
 	XMLName               xml.Name `xml:"valuableMovablePropertyObject"`
-	Name                  string
+	Name                  string   `xml:"name"`
 	TypeMovableObject     TypeMovableObject
 	AvailabilityEndPeriod AvailabilityEndPeriod
 	ActualTermOfUse       ActualTermOfUse
-	ResidualValue         ResidualValue
+	// ResidualValue         ResidualValue
 }
 
 type AvailabilityEndPeriod struct {
@@ -628,7 +623,12 @@ type VehiclesExpensesMaintenance struct {
 // ==============================
 // ==============================
 type ValuableMovablePropertyObjects struct {
-	XMLName xml.Name `xml:"valuableMovablePropertyObjects"`
+	XMLName                       xml.Name `xml:"valuableMovablePropertyObjects"`
+	TypeMovableObject             TypeMovableObject
+	ValuableMovablePropertyObject []ValuableMovablePropertyObject
+	// AvailabilityEndPeriod         AvailabilityEndPeriod
+	// ActualTermOfUse               ActualTermOfUse
+	// ResidualValue                 ResidualValue
 }
 
 type EffectiveActivity struct {

@@ -494,6 +494,59 @@ func ProcessFile(filePath string) error {
 		},
 	}
 
+	// ======================================================================
+	// Сведения об особо ценном движимом имуществе (за исключение
+	// м транспортны х средств)
+	// ======================================================================
+	rows, err = f.GetRows("Лист21")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+	rows2, err = f.GetRows("Лист22")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+
+	r := []int{32, 34}
+	r2 := []int{17, 19}
+
+	valuableMovablePropertyObject := []ValuableMovablePropertyObject{}
+	for i := range r {
+
+		valuableMovablePropertyObject = append(valuableMovablePropertyObject, ValuableMovablePropertyObject{
+			Name: "53151",
+			TypeMovableObject: TypeMovableObject{
+				Type:     "2000",
+				LineCode: getFloat(rows[r[i]][31]),
+			},
+			AvailabilityEndPeriod: AvailabilityEndPeriod{
+				Total:                  getFinLen(rows[r[i]], 37),
+				UsedByAgency:           getFinLen(rows[r[i]], 50),
+				TransferredForUseTotal: "0",
+				ForRent:                "0",
+				ForFree:                "0",
+				NeedRepair:             "0",
+				WaitWriteOffTotal:      "0",
+				WaitWriteOffReplace:    "0",
+			},
+			ActualTermOfUse: ActualTermOfUse{
+				ActualTerm: "Over121",
+				Count:      getFinLen(rows2[r2[i]], 37),
+				Cost:       getFinLen(rows2[r2[i]], 46),
+			},
+		})
+	}
+
+	valuableMovableProperty := ValuableMovableProperty{
+		ValuableMovablePropertyObjects: ValuableMovablePropertyObjects{
+			TypeMovableObject: TypeMovableObject{
+				Type:     "2000",
+				LineCode: "2000",
+			},
+			ValuableMovablePropertyObject: valuableMovablePropertyObject,
+		},
+	}
+
 	// ==============================
 	// Транспортные средства
 	// ==============================
@@ -619,10 +672,11 @@ func ProcessFile(filePath string) error {
 	}
 
 	position.AssetsUse = AssetsUse{
-		Xmlns:            "http://bus.gov.ru/types/1",
-		EstateExceptLand: estateExceptLand,
-		LandPermanentUse: landPermanentUse,
-		Vehicles:         vehicles,
+		Xmlns:                   "http://bus.gov.ru/types/1",
+		EstateExceptLand:        estateExceptLand,
+		LandPermanentUse:        landPermanentUse,
+		ValuableMovableProperty: valuableMovableProperty,
+		Vehicles:                vehicles,
 	}
 
 	doc := ReportActivityResult{
