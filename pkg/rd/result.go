@@ -497,11 +497,125 @@ func ProcessFile(filePath string) error {
 	// ==============================
 	// Транспортные средства
 	// ==============================
+
+	// TODO Нужножно нормально обработать в цикле по таблице
+	// улучшить структуру в срезы
+
+	rows, err = f.GetRows("Листы27-28")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+
+	usedVehicles := UsedVehicles{
+		UsedVehiclesTransports: UsedVehiclesTransports{
+			TransportsType: TransportsType{
+				TranspType: "1000",
+				LineCode:   "1000",
+			},
+			VehiclesDetails: VehiclesDetails{
+				Name: "Автобусы",
+				TransportsType: TransportsType{
+					TranspType: "1000",
+					LineCode:   "1500",
+				},
+				Total: Total{
+					EndDate:      getFinLen(rows[48], 37),
+					MiddleOfYear: getFinLen(rows[48], 50),
+				},
+				OperationManagment: OperationManagment{
+					EndDate:      getFinLen(rows[48], 63),
+					MiddleOfYear: getFinLen(rows[48], 76),
+				},
+			},
+		},
+	}
+	notUsedVehicles := NotUsedVehicles{
+		NotUsedVehiclesTransports: NotUsedVehiclesTransports{
+			TransportsType: TransportsType{
+				TranspType: "1000",
+				LineCode:   "1000",
+			},
+		},
+	}
+	rows, err = f.GetRows("Листы29-30")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+
+	directionOfUse := DirectionOfUse{
+		DirectionOfUseTransports: DirectionOfUseTransports{
+			TransportsType: TransportsType{
+				TranspType: "1000",
+				LineCode:   "1000",
+			},
+			DirectionOfUseTransport: DirectionOfUseTransport{
+				Name: "Автобусы",
+				TransportsType: TransportsType{
+					TranspType: "1000",
+					LineCode:   "1500",
+				},
+				DirectlyUsedVehicles: DirectlyUsedVehicles{
+					Total: Total{
+						EndDate:      getFinLen(rows[56], 21),
+						MiddleOfYear: getFinLen(rows[56], 26),
+					},
+					OperationManagment: OperationManagment{
+						EndDate:      getFinLen(rows[56], 31),
+						MiddleOfYear: getFinLen(rows[56], 36),
+					},
+					UnderLease: UnderLease{
+						EndDate:      "0",
+						MiddleOfYear: "0",
+					},
+					UnderGratuitous: UnderGratuitous{
+						EndDate:      "0",
+						MiddleOfYear: "0",
+					},
+				},
+			},
+		},
+	}
+
+	rows, err = f.GetRows("Листы31-32")
+	if err != nil {
+		return fmt.Errorf("не удалось прочитать лист: %w", err)
+	}
+	costMaintenanceVehicles := CostMaintenanceVehicles{
+		CostMaintenanceVehiclesTransports: CostMaintenanceVehiclesTransports{
+			TransportsType: TransportsType{
+				TranspType: "1000",
+				LineCode:   "1000",
+			},
+			CostMaintenanceVehiclesTransport: CostMaintenanceVehiclesTransport{
+				Name: "Автобусы",
+				TransportsType: TransportsType{
+					TranspType: "1000",
+					LineCode:   "1500",
+				},
+				VehiclesExpensesMaintenance: VehiclesExpensesMaintenance{
+					PeriodTotal:             getFinLen(rows[40], 36),
+					TransportTax:            getFinLen(rows[40], 45),
+					FuelCosts:               getFinLen(rows[40], 53),
+					WheelCosts:              getFinLen(rows[40], 61),
+					OsagoCosts:              getFinLen(rows[40], 69),
+					VolunteerInsuranceCosts: getFinLen(rows[40], 77),
+					RepairsCosts:            getFinLen(rows[40], 85),
+					MaintenanceCosts:        getFinLen(rows[40], 93),
+					GaragesRent:             getFinLen(rows[40], 101),
+					GaragesMaintenance:      getFinLen(rows[40], 109),
+					Drivers:                 getFinLen(rows[40], 117),
+					ServisesPersonnel:       getFinLen(rows[40], 125),
+					AdministrativePersonnel: getFinLen(rows[40], 133),
+				},
+			},
+		},
+	}
+
 	vehicles := Vehicles{
-		UsedVehicles:            UsedVehicles{},
-		NotUsedVehicles:         NotUsedVehicles{},
-		DirectionOfUse:          DirectionOfUse{},
-		CostMaintenanceVehicles: CostMaintenanceVehicles{},
+		UsedVehicles:            usedVehicles,
+		NotUsedVehicles:         notUsedVehicles,
+		DirectionOfUse:          directionOfUse,
+		CostMaintenanceVehicles: costMaintenanceVehicles,
 	}
 
 	position.AssetsUse = AssetsUse{

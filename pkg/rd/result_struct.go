@@ -536,8 +536,8 @@ type VehiclesDetails struct {
 
 type Total struct {
 	XMLName      xml.Name `xml:"total"`
-	EndDate      string   `xmk:"endDate"`
-	MiddleOfYear string   `xmk:"middleOfYear"`
+	EndDate      string   `xml:"endDate"`
+	MiddleOfYear string   `xml:"middleOfYear"`
 }
 
 type OperationManagment struct {
@@ -547,7 +547,11 @@ type OperationManagment struct {
 }
 
 type NotUsedVehicles struct {
-	XMLName        xml.Name `xml:"notUsedVehicles"`
+	XMLName                   xml.Name `xml:"notUsedVehicles"`
+	NotUsedVehiclesTransports NotUsedVehiclesTransports
+}
+type NotUsedVehiclesTransports struct {
+	XMLName        xml.Name `xml:"notUsedVehiclesTransports"`
 	TransportsType TransportsType
 }
 
@@ -572,13 +576,24 @@ type DirectlyUsedVehicles struct {
 	XMLName            xml.Name `xml:"directlyUsedVehicles"`
 	Total              Total
 	OperationManagment OperationManagment
-	// UnderLease         UnderLease
-	// UnderGratuitous    UnderGratuitous
+	UnderLease         UnderLease
+	UnderGratuitous    UnderGratuitous
+}
+
+type UnderLease struct {
+	XMLName      xml.Name `xml:"underLease"`
+	EndDate      string   `xml:"endDate"`
+	MiddleOfYear string   `xml:"middleOfYear"`
+}
+type UnderGratuitous struct {
+	XMLName      xml.Name `xml:"underGratuitous"`
+	EndDate      string   `xml:"endDate"`
+	MiddleOfYear string   `xml:"middleOfYear"`
 }
 
 type CostMaintenanceVehicles struct {
 	XMLName                           xml.Name `xml:"costMaintenanceVehicles"`
-	CostMaintenanceVehiclesTransports []CostMaintenanceVehiclesTransports
+	CostMaintenanceVehiclesTransports CostMaintenanceVehiclesTransports
 }
 type CostMaintenanceVehiclesTransports struct {
 	XMLName                          xml.Name `xml:"costMaintenanceVehiclesTransports"`
