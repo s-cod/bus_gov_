@@ -43,6 +43,7 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
+	OKTMO := rows[24][86]
 	position := Position{
 		PositionId: uuid.New().String(),
 		ChangeDate: currentTime,
@@ -56,7 +57,7 @@ func ProcessFile(filePath string) error {
 		FounderAgencyName: "Комитет по образованию администрации Горьковского района Омской области",
 		GlavaCode:         "704",
 		PpoName:           "",
-		OktmoCode:         "52509000147",
+		OktmoCode:         OKTMO,
 		ReportYear:        year,
 		ConfirmDate:       currentTime[:10],
 		// Result            Result
@@ -377,7 +378,7 @@ func ProcessFile(filePath string) error {
 			Address:   rows[i][17],
 			CadNumber: rows[i][32],
 			Oktmo: Oktmo{
-				Code: rows[i][41],
+				Code: OKTMO,
 				Name: "Name",
 			},
 			UniqueObjectCode: strconv.Itoa(i),
@@ -431,7 +432,7 @@ func ProcessFile(filePath string) error {
 			Name:    rows[i][0],
 			Address: rows[i][14],
 			Oktmo: Oktmo{
-				Code: rows[i][23],
+				Code: OKTMO,
 				Name: "name",
 			},
 			CadNumber: rows[i][28],
@@ -554,7 +555,7 @@ func ProcessFile(filePath string) error {
 	// TODO Нужножно нормально обработать в цикле по таблице
 	// улучшить структуру в срезы
 
-	rows, err = f.GetRows("Листы27-28")
+	rows, err = f.GetRows("Листы25-26")
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
