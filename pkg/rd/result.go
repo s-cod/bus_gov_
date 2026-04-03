@@ -1,4 +1,7 @@
+// Package rd формирование отчета о результатах деятельности
 package rd
+
+// kljfvj
 
 import (
 	"encoding/xml"
@@ -17,9 +20,10 @@ func getFloat(s string) string {
 	if s == "" {
 		return "0.00"
 	}
-	result := strings.Replace(s, ",", "", -1)
+	result := strings.ReplaceAll(s, ",", "")
 	return result
 }
+
 func getFinLen(s []string, i int) string {
 	if len(s) < i {
 		return "0.00"
@@ -27,7 +31,7 @@ func getFinLen(s []string, i int) string {
 	if s[i] == "" {
 		return "0.00"
 	}
-	result := strings.Replace(s[i], ",", "", -1)
+	result := strings.ReplaceAll(s[i], ",", "")
 	return result
 }
 
@@ -36,7 +40,11 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось открыть файл: %w", err)
 	}
-	defer f.Close()
+	defer func() {
+		if err := f.Close(); err != nil {
+			panic(err.Error())
+		}
+	}()
 	currentTime := time.Now().Format("2006-01-02T15:04:05")
 	year := currentTime[0:4]
 	rows, err := f.GetRows("Лист1")
@@ -45,7 +53,7 @@ func ProcessFile(filePath string) error {
 	}
 	OKTMO := rows[24][86]
 	position := Position{
-		PositionId: uuid.New().String(),
+		PositionID: uuid.New().String(),
 		ChangeDate: currentTime,
 		// Placer            Placer
 		// Initiator         Initiator
@@ -513,7 +521,6 @@ func ProcessFile(filePath string) error {
 
 	valuableMovablePropertyObject := []ValuableMovablePropertyObject{}
 	for i := range r {
-
 		valuableMovablePropertyObject = append(valuableMovablePropertyObject, ValuableMovablePropertyObject{
 			Name: "53151",
 			TypeMovableObject: TypeMovableObject{
@@ -686,7 +693,7 @@ func ProcessFile(filePath string) error {
 
 		Header: Header{
 			Xmlns:          "http://bus.gov.ru/types/1",
-			Id:             uuid.New().String(),
+			ID:             uuid.New().String(),
 			CreateDateTime: currentTime, //"2024-12-31T00:00:00",
 		},
 		Body: Body{
@@ -699,7 +706,12 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось создать файл: %w", err)
 	}
-	defer file.Close()
+
+	defer func() {
+		if err := f.Close(); err != nil {
+			panic(err.Error())
+		}
+	}()
 
 	// Записываем заголовок XML вручную
 	if _, err := file.Write([]byte(`<?xml version="1.0" encoding="utf-8"?>` + "\n")); err != nil {
