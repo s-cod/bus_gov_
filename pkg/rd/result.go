@@ -20,6 +20,7 @@ func getFloat(s string) string {
 	result := strings.Replace(s, ",", "", -1)
 	return result
 }
+
 func getFinLen(s []string, i int) string {
 	if len(s) < i {
 		return "0.00"
@@ -45,7 +46,7 @@ func ProcessFile(filePath string) error {
 	}
 	OKTMO := rows[24][86]
 	position := Position{
-		PositionId: uuid.New().String(),
+		PositionID: uuid.New().String(),
 		ChangeDate: currentTime,
 		// Placer            Placer
 		// Initiator         Initiator
@@ -513,7 +514,6 @@ func ProcessFile(filePath string) error {
 
 	valuableMovablePropertyObject := []ValuableMovablePropertyObject{}
 	for i := range r {
-
 		valuableMovablePropertyObject = append(valuableMovablePropertyObject, ValuableMovablePropertyObject{
 			Name: "53151",
 			TypeMovableObject: TypeMovableObject{
@@ -686,7 +686,7 @@ func ProcessFile(filePath string) error {
 
 		Header: Header{
 			Xmlns:          "http://bus.gov.ru/types/1",
-			Id:             uuid.New().String(),
+			ID:             uuid.New().String(),
 			CreateDateTime: currentTime, //"2024-12-31T00:00:00",
 		},
 		Body: Body{
