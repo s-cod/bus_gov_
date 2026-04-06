@@ -1,9 +1,6 @@
 // Package rd формирование отчета о результатах деятельности
 package rd
 
-// kljfvj
-// Проверка веток
-
 import (
 	"encoding/xml"
 	"fmt"
@@ -17,22 +14,34 @@ import (
 	"github.com/xuri/excelize/v2"
 )
 
-func getFloat(s string) string {
-	if s == "" {
-		return "0.00"
-	}
-	result := strings.ReplaceAll(s, ",", "")
-	return result
-}
+// func GD(s string) string {
+// 	if s == "" {
+// 		return "0.00"
+// 	}
+// 	result := strings.ReplaceAll(s, ",", "")
+// 	return result
+// }
 
-func getFinLen(s []string, i int) string {
-	if len(s) < i {
+func GD(s [][]string, r, c int) string {
+	if r == 0 || c == 0 {
+		r, err := fmt.Printf("неверный диапазон ячеек row:%v col:%v", r, c)
+		if err != nil {
+			panic(err.Error())
+		}
+		panic(r)
+	}
+	r -= 1
+	c -= 1
+
+	if len(s[r]) < c {
 		return "0.00"
 	}
-	if s[i] == "" {
+	if s[r][c] == "" {
 		return "0.00"
 	}
-	result := strings.ReplaceAll(s[i], ",", "")
+
+	tmp := s[r][c]
+	result := strings.ReplaceAll(tmp, ",", "")
 	return result
 }
 
@@ -47,12 +56,13 @@ func ProcessFile(filePath string) error {
 		}
 	}()
 	currentTime := time.Now().Format("2006-01-02T15:04:05")
-	year := currentTime[0:4]
-	rows, err := f.GetRows("Лист1")
+	rows, err := f.GetRows("Состав сведений")
+	year := GD(rows, 11, 58)
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
-	OKTMO := rows[24][86]
+	OKTMO := GD(rows, 18, 94)
+
 	position := Position{
 		PositionID: uuid.New().String(),
 		ChangeDate: currentTime,
@@ -60,11 +70,11 @@ func ProcessFile(filePath string) error {
 		// Initiator         Initiator
 		VersionNumber: "1",
 		// SignerDetails     SignerDetails
-		ReportMonth:       "Январь",
+		ReportMonth:       GD(rows, 11, 44),
 		ReportYearShort:   year,
-		AgencyTypeCode:    "02",
-		FounderAgencyName: "Комитет по образованию администрации Горьковского района Омской области",
-		GlavaCode:         "704",
+		AgencyTypeCode:    GD(rows, 15, 28),
+		FounderAgencyName: GD(rows, 17, 28),
+		GlavaCode:         GD(rows, 16, 94),
 		PpoName:           "",
 		OktmoCode:         OKTMO,
 		ReportYear:        year,
@@ -81,9 +91,9 @@ func ProcessFile(filePath string) error {
 	position.Placer = Placer{
 		Xmlns:    "http://bus.gov.ru/types/1",
 		RegNum:   "523D2025",
-		FullName: rows[16][15],
-		Inn:      rows[17][86],
-		Kpp:      rows[18][86],
+		FullName: GD(rows, 14, 28),
+		Inn:      GD(rows, 13, 94),
+		Kpp:      GD(rows, 14, 94),
 	}
 
 	position.Initiator = Initiator{
@@ -108,59 +118,54 @@ func ProcessFile(filePath string) error {
 	receipts := make([]Receipts, 0)
 	payments := make([]Payments, 0)
 
-	rows, err = f.GetRows("Лист2-3")
+	rows, err = f.GetRows("Поступления и выплаты")
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
 
-	for i := 18; i < 68; i++ {
-		if len(rows[i]) < 122 {
+	for i := 19; i < 52; i++ {
+		if GD(rows, i, 80) == "0.00" {
 			continue
 		}
 
 		receipts = append(receipts, Receipts{
 			Name:                   rows[i][0],
-			LineCode:               rows[i][55],
+			LineCode:               rows[i][71],
 			ReceiptsTotal:          "80",
-			ReportingFinancialYear: getFloat(rows[i][61]),
-			PrecedingFinancialYear: getFloat(rows[i][81]),
-			Change:                 getFloat(rows[i][101]),
-			TotalAmountShare:       getFloat(rows[i][121]),
+			ReportingFinancialYear: GD(rows, i, 80),
+			PrecedingFinancialYear: GD(rows, i, 102),
+			Change:                 GD(rows, i, 1241),
+			TotalAmountShare:       GD(rows, i, 146),
 		})
 	}
 
-	rows, err = f.GetRows("Лист4-5")
-	if err != nil {
-		return fmt.Errorf("не удалось прочитать лист: %w", err)
-	}
-
 	// TODO заполнить в цикле
-	for i := 14; i < 67; i++ {
-		if len(rows[i]) < 19 {
+	for i := 61; i < 89; i++ {
+		if GD(rows, i, 25) == "0.00" {
 			continue
 		}
 
-		// fmt.Println("LineCode:", getFinLen(rows[i], 31))
+		// fmt.Println("LineCode:", GD(rows[i], 31))
 		payments = append(payments, Payments{
-			Name:                                  rows[i][0],
-			LineCode:                              rows[i][19],
-			PaymentsTotal:                         getFinLen(rows[i], 24),
-			PaymentsTotalShare:                    getFinLen(rows[i], 31),
-			FinancialSupportSubsidiesStateTasks:   getFinLen(rows[i], 37),
-			PaymentsTotalShare6:                   getFinLen(rows[i], 44),
-			FinancialSupportSubsidiesOther:        getFinLen(rows[i], 50),
-			PaymentsTotalShare8:                   getFinLen(rows[i], 57),
-			GrantSubsidiesStateBudget:             getFinLen(rows[i], 63),
-			PaymentsTotalShare10:                  getFinLen(rows[i], 70),
-			GrantSubsidiesStateBudgetSubject:      getFinLen(rows[i], 76),
-			PaymentsTotalShare12:                  getFinLen(rows[i], 83),
-			FinancialSupportOms:                   getFinLen(rows[i], 89),
-			PaymentsTotalShare14:                  getFinLen(rows[i], 96),
-			FinancialSupportIncomeActivitiesTotal: getFinLen(rows[i], 102),
-			PaymentsTotalShare16:                  getFinLen(rows[i], 109),
-			FundsIncome:                           getFinLen(rows[i], 115),
-			PaymentsTotalShare18:                  getFinLen(rows[i], 122),
-			FundsIncomeGratuitousReceipts:         getFinLen(rows[i], 128),
+			Name:                                  GD(rows, i, 0),
+			LineCode:                              GD(rows, i, 19),
+			PaymentsTotal:                         GD(rows, i, 25),
+			PaymentsTotalShare:                    GD(rows, i, 32),
+			FinancialSupportSubsidiesStateTasks:   GD(rows, i, 38),
+			PaymentsTotalShare6:                   GD(rows, i, 47),
+			FinancialSupportSubsidiesOther:        GD(rows, i, 55),
+			PaymentsTotalShare8:                   GD(rows, i, 62),
+			GrantSubsidiesStateBudget:             GD(rows, i, 70),
+			PaymentsTotalShare10:                  GD(rows, i, 78),
+			GrantSubsidiesStateBudgetSubject:      GD(rows, i, 86),
+			PaymentsTotalShare12:                  GD(rows, i, 94),
+			FinancialSupportOms:                   GD(rows, i, 102),
+			PaymentsTotalShare14:                  GD(rows, i, 111),
+			FinancialSupportIncomeActivitiesTotal: GD(rows, i, 119),
+			PaymentsTotalShare16:                  GD(rows, i, 128),
+			FundsIncome:                           GD(rows, i, 144),
+			PaymentsTotalShare18:                  GD(rows, i, 152),
+			FundsIncomeGratuitousReceipts:         GD(rows, i, 160),
 			PaymentsTotalShare20:                  "0",
 		})
 	}
@@ -198,66 +203,66 @@ func ProcessFile(filePath string) error {
 			},
 			Employees: Employees{
 				StaffingStartYear: StaffingStartYear{
-					StaffingTotal: getFinLen(rows[s11[i]], 27),
-					StaffingBase:  getFinLen(rows[s11[i]], 35),
-					Replaced:      getFinLen(rows[s11[i]], 35),
-					Vacancy:       getFinLen(rows[s11[i]], 50),
+					StaffingTotal: GD(rows, s11[i], 27),
+					StaffingBase:  GD(rows, s11[i], 35),
+					Replaced:      GD(rows, s11[i], 35),
+					Vacancy:       GD(rows, s11[i], 50),
 				},
 				AverageOfYear: AverageOfYear{
-					Total:           getFinLen(rows[s11[i]], 57),
-					Base:            getFinLen(rows[s11[i]], 65),
-					MainPlace:       getFinLen(rows[s11[i]], 73),
-					InsidePartTme:   getFinLen(rows[s11[i]], 81),
-					OutsidePartTime: getFinLen(rows[s11[i]], 88),
+					Total:           GD(rows, s11[i], 57),
+					Base:            GD(rows, s11[i], 65),
+					MainPlace:       GD(rows, s11[i], 73),
+					InsidePartTme:   GD(rows, s11[i], 81),
+					OutsidePartTime: GD(rows, s11[i], 88),
 				},
 				Contracts: Contracts{
-					Employees:    getFinLen(rows[s11[i]], 95),
-					NotEmployees: getFinLen(rows[s11[i]], 103),
+					Employees:    GD(rows, s11[i], 95),
+					NotEmployees: GD(rows, s11[i], 103),
 				},
 				StaffingEndYear: StaffingEndYear{
-					StaffingTotal: getFinLen(rows[s11[i]], 111),
-					StaffingBase:  getFinLen(rows[s11[i]], 119),
-					Replaced:      getFinLen(rows[s11[i]], 119),
-					Vacancy:       getFinLen(rows[s11[i]], 134),
+					StaffingTotal: GD(rows, s11[i], 111),
+					StaffingBase:  GD(rows, s11[i], 119),
+					Replaced:      GD(rows, s11[i], 119),
+					Vacancy:       GD(rows, s11[i], 134),
 				},
 			},
 			Salary: Salary{
 				SalaryFund: SalaryFund{
-					Total:           getFinLen(rows2[s12[i]], 29),
-					Base:            getFinLen(rows2[s12[i]], 37),
-					BaseFullTime:    getFinLen(rows2[s12[i]], 45),
-					MainPartTme:     getFinLen(rows2[s12[i]], 53),
-					InsideCombining: getFinLen(rows2[s12[i]], 61),
-					Outside:         getFinLen(rows2[s12[i]], 69),
+					Total:           GD(rows2, s12[i], 29),
+					Base:            GD(rows2, s12[i], 37),
+					BaseFullTime:    GD(rows2, s12[i], 45),
+					MainPartTme:     GD(rows2, s12[i], 53),
+					InsideCombining: GD(rows2, s12[i], 61),
+					Outside:         GD(rows2, s12[i], 69),
 				},
 				Accrued: Accrued{
-					Employees:    getFinLen(rows2[s12[i]], 77),
-					NotEmployees: getFinLen(rows2[s12[i]], 85),
+					Employees:    GD(rows2, s12[i], 77),
+					NotEmployees: GD(rows2, s12[i], 85),
 				},
 				SalaryAnalytic: SalaryAnalytic{
 					BaseWorkplace: BaseWorkplace{
-						SubsidiesContract:      getFinLen(rows2[s12[i]], 93),
-						SubsidiesOther:         getFinLen(rows2[s12[i]], 101),
-						SubsidiesGrantFederal:  getFinLen(rows2[s12[i]], 109),
-						SubsidiesGrantRegional: getFinLen(rows2[s12[i]], 117),
-						Oms:                    getFinLen(rows2[s12[i]], 125),
-						IncomeActivities:       getFinLen(rows2[s12[i]], 133),
+						SubsidiesContract:      GD(rows2, s12[i], 93),
+						SubsidiesOther:         GD(rows2, s12[i], 101),
+						SubsidiesGrantFederal:  GD(rows2, s12[i], 109),
+						SubsidiesGrantRegional: GD(rows2, s12[i], 117),
+						Oms:                    GD(rows2, s12[i], 125),
+						IncomeActivities:       GD(rows2, s12[i], 133),
 					},
 					InsideCombining: InsideCombining{
-						SubsidiesContract:      getFinLen(rows3[s13[i]], 31),
-						SubsidiesOther:         getFinLen(rows3[s13[i]], 41),
-						SubsidiesGrantFederal:  getFinLen(rows3[s13[i]], 50),
-						SubsidiesGrantRegional: getFinLen(rows3[s13[i]], 59),
-						Oms:                    getFinLen(rows3[s13[i]], 68),
-						IncomeActivities:       getFinLen(rows3[s13[i]], 77),
+						SubsidiesContract:      GD(rows3, s13[i], 31),
+						SubsidiesOther:         GD(rows3, s13[i], 41),
+						SubsidiesGrantFederal:  GD(rows3, s13[i], 50),
+						SubsidiesGrantRegional: GD(rows3, s13[i], 59),
+						Oms:                    GD(rows3, s13[i], 68),
+						IncomeActivities:       GD(rows3, s13[i], 77),
 					},
 					OutsideWorkplace: OutsideWorkplace{
-						SubsidiesContract:      getFinLen(rows3[s13[i]], 86),
-						SubsidiesOther:         getFinLen(rows3[s13[i]], 96),
-						SubsidiesGrantFederal:  getFinLen(rows3[s13[i]], 105),
-						SubsidiesGrantRegional: getFinLen(rows3[s13[i]], 114),
-						Oms:                    getFinLen(rows3[s13[i]], 123),
-						IncomeActivities:       getFinLen(rows3[s13[i]], 132),
+						SubsidiesContract:      GD(rows3, s13[i], 86),
+						SubsidiesOther:         GD(rows3, s13[i], 96),
+						SubsidiesGrantFederal:  GD(rows3, s13[i], 105),
+						SubsidiesGrantRegional: GD(rows3, s13[i], 114),
+						Oms:                    GD(rows3, s13[i], 123),
+						IncomeActivities:       GD(rows3, s13[i], 132),
 					},
 					EmployeesContract: EmployeesContract{
 						SubsidiesContract:      "0",
@@ -291,22 +296,22 @@ func ProcessFile(filePath string) error {
 			continue
 		}
 		creditPayment = append(creditPayment, CreditPayment{
-			Name:                        getFinLen(rows[i], 0),
-			LineCode:                    getFinLen(rows[i], 38),
-			CreditPaymentStartYearTotal: getFinLen(rows[i], 43),
-			CreditPaymentStartYearDedlineReportingYear: getFinLen(rows[i], 50),
-			CreditPaymentEndYearTotal:                  getFinLen(rows[i], 57),
-			CreditPaymentEndYearTotalQuarter1:          getFinLen(rows[i], 64),
-			CreditPaymentEndYearTotalJanuary:           getFinLen(rows[i], 71),
-			CreditPaymentEndYearTotalQuarter2:          getFinLen(rows[i], 78),
-			CreditPaymentEndYearTotalQuarter3:          getFinLen(rows[i], 85),
-			CreditPaymentEndYearTotalQuarter4:          getFinLen(rows[i], 92),
-			CreditPaymentEndYearTotalNextYear:          getFinLen(rows[i], 99),
-			AmountDeferredTotal:                        getFinLen(rows[i], 106),
-			AmountDeferredSalary:                       getFinLen(rows[i], 113),
-			AmountDeferredClaims:                       getFinLen(rows[i], 120),
-			AmountDeferredNotReceived:                  getFinLen(rows[i], 127),
-			AmountDeferredOther:                        getFinLen(rows[i], 134),
+			Name:                        GD(rows, i, 0),
+			LineCode:                    GD(rows, i, 38),
+			CreditPaymentStartYearTotal: GD(rows, i, 43),
+			CreditPaymentStartYearDedlineReportingYear: GD(rows, i, 50),
+			CreditPaymentEndYearTotal:                  GD(rows, i, 57),
+			CreditPaymentEndYearTotalQuarter1:          GD(rows, i, 64),
+			CreditPaymentEndYearTotalJanuary:           GD(rows, i, 71),
+			CreditPaymentEndYearTotalQuarter2:          GD(rows, i, 78),
+			CreditPaymentEndYearTotalQuarter3:          GD(rows, i, 85),
+			CreditPaymentEndYearTotalQuarter4:          GD(rows, i, 92),
+			CreditPaymentEndYearTotalNextYear:          GD(rows, i, 99),
+			AmountDeferredTotal:                        GD(rows, i, 106),
+			AmountDeferredSalary:                       GD(rows, i, 113),
+			AmountDeferredClaims:                       GD(rows, i, 120),
+			AmountDeferredNotReceived:                  GD(rows, i, 127),
+			AmountDeferredOther:                        GD(rows, i, 134),
 		})
 	}
 
@@ -337,12 +342,12 @@ func ProcessFile(filePath string) error {
 
 	actualExpenses := ActualExpenses{
 		Utilities: Utilities{
-			Total:             getFinLen(rows2[10], 66),
+			Total:             GD(rows2, 10, 66),
 			ReimbursedByUsers: "0",
 			UnusedProperty:    "0",
 		},
 		PropertyMaintenanceServices: PropertyMaintenanceServices{
-			Total:             getFinLen(rows2[10], 91),
+			Total:             GD(rows2, 10, 91),
 			ReimbursedByUsers: "0",
 			UnusedProperty:    "0",
 		},
@@ -351,7 +356,7 @@ func ProcessFile(filePath string) error {
 			ReimbursedByUsers: "0",
 			UnusedProperty:    "0",
 		},
-		Total: getFinLen(rows2[10], 57),
+		Total: GD(rows2, 10, 57),
 	}
 	actualExpensesNull := ActualExpenses{
 		Utilities: Utilities{
@@ -455,22 +460,22 @@ func ProcessFile(filePath string) error {
 				Used: UsedL{
 					Total:               rows[i][57],
 					MainPurposeTask:     rows[i][63],
-					MainPurposeOverTask: getFinLen(rows[i], 69),
-					UsedOther:           getFinLen(rows[i], 75),
+					MainPurposeOverTask: GD(rows, i, 69),
+					UsedOther:           GD(rows, i, 75),
 				},
-				UsedByEasement: getFinLen(rows[i], 81),
+				UsedByEasement: GD(rows, i, 81),
 				NotUsed: NotUsed{
-					Total:                    getFinLen(rows[i], 87),
-					TemporaryUsedRent:        getFinLen(rows[i], 93),
-					TemporaryUsedFree:        getFinLen(rows[i], 99),
-					TemporaryUsedWithoutRigt: getFinLen(rows[i], 105),
-					TemporaryUsedOther:       getFinLen(rows[i], 111),
+					Total:                    GD(rows, i, 87),
+					TemporaryUsedRent:        GD(rows, i, 93),
+					TemporaryUsedFree:        GD(rows, i, 99),
+					TemporaryUsedWithoutRigt: GD(rows, i, 105),
+					TemporaryUsedOther:       GD(rows, i, 111),
 				},
 				ExpensesForLand: ExpensesForLand{
-					Total:       getFinLen(rows[i], 117),
-					CostsTotal:  getFinLen(rows[i], 123),
-					CostsRefund: getFinLen(rows[i], 129),
-					LandTax:     getFinLen(rows[i], 135),
+					Total:       GD(rows, i, 117),
+					CostsTotal:  GD(rows, i, 123),
+					CostsRefund: GD(rows, i, 129),
+					LandTax:     GD(rows, i, 135),
 				},
 			},
 		})
@@ -526,11 +531,11 @@ func ProcessFile(filePath string) error {
 			Name: "53151",
 			TypeMovableObject: TypeMovableObject{
 				Type:     "2000",
-				LineCode: getFloat(rows[r[i]][31]),
+				LineCode: GD(rows, r[i], 31),
 			},
 			AvailabilityEndPeriod: AvailabilityEndPeriod{
-				Total:                  getFinLen(rows[r[i]], 37),
-				UsedByAgency:           getFinLen(rows[r[i]], 50),
+				Total:                  GD(rows, r[i], 37),
+				UsedByAgency:           GD(rows, r[i], 50),
 				TransferredForUseTotal: "0",
 				ForRent:                "0",
 				ForFree:                "0",
@@ -540,8 +545,8 @@ func ProcessFile(filePath string) error {
 			},
 			ActualTermOfUse: ActualTermOfUse{
 				ActualTerm: "Over121",
-				Count:      getFinLen(rows2[r2[i]], 37),
-				Cost:       getFinLen(rows2[r2[i]], 46),
+				Count:      GD(rows2, r2[i], 37),
+				Cost:       GD(rows2, r2[i], 46),
 			},
 		})
 	}
@@ -581,12 +586,12 @@ func ProcessFile(filePath string) error {
 					LineCode:   "1500",
 				},
 				Total: Total{
-					EndDate:      getFinLen(rows[48], 37),
-					MiddleOfYear: getFinLen(rows[48], 50),
+					EndDate:      GD(rows, 48, 37),
+					MiddleOfYear: GD(rows, 48, 50),
 				},
 				OperationManagment: OperationManagment{
-					EndDate:      getFinLen(rows[48], 63),
-					MiddleOfYear: getFinLen(rows[48], 76),
+					EndDate:      GD(rows, 48, 63),
+					MiddleOfYear: GD(rows, 48, 76),
 				},
 			},
 		},
@@ -618,12 +623,12 @@ func ProcessFile(filePath string) error {
 				},
 				DirectlyUsedVehicles: DirectlyUsedVehicles{
 					Total: Total{
-						EndDate:      getFinLen(rows[56], 21),
-						MiddleOfYear: getFinLen(rows[56], 26),
+						EndDate:      GD(rows, 56, 21),
+						MiddleOfYear: GD(rows, 56, 26),
 					},
 					OperationManagment: OperationManagment{
-						EndDate:      getFinLen(rows[56], 31),
-						MiddleOfYear: getFinLen(rows[56], 36),
+						EndDate:      GD(rows, 56, 31),
+						MiddleOfYear: GD(rows, 56, 36),
 					},
 					UnderLease: UnderLease{
 						EndDate:      "0",
@@ -655,19 +660,19 @@ func ProcessFile(filePath string) error {
 					LineCode:   "1500",
 				},
 				VehiclesExpensesMaintenance: VehiclesExpensesMaintenance{
-					PeriodTotal:             getFinLen(rows[40], 36),
-					TransportTax:            getFinLen(rows[40], 45),
-					FuelCosts:               getFinLen(rows[40], 53),
-					WheelCosts:              getFinLen(rows[40], 61),
-					OsagoCosts:              getFinLen(rows[40], 69),
-					VolunteerInsuranceCosts: getFinLen(rows[40], 77),
-					RepairsCosts:            getFinLen(rows[40], 85),
-					MaintenanceCosts:        getFinLen(rows[40], 93),
-					GaragesRent:             getFinLen(rows[40], 101),
-					GaragesMaintenance:      getFinLen(rows[40], 109),
-					Drivers:                 getFinLen(rows[40], 117),
-					ServisesPersonnel:       getFinLen(rows[40], 125),
-					AdministrativePersonnel: getFinLen(rows[40], 133),
+					PeriodTotal:             GD(rows, 40, 36),
+					TransportTax:            GD(rows, 40, 45),
+					FuelCosts:               GD(rows, 40, 53),
+					WheelCosts:              GD(rows, 40, 61),
+					OsagoCosts:              GD(rows, 40, 69),
+					VolunteerInsuranceCosts: GD(rows, 40, 77),
+					RepairsCosts:            GD(rows, 40, 85),
+					MaintenanceCosts:        GD(rows, 40, 93),
+					GaragesRent:             GD(rows, 40, 101),
+					GaragesMaintenance:      GD(rows, 40, 109),
+					Drivers:                 GD(rows, 40, 117),
+					ServisesPersonnel:       GD(rows, 40, 125),
+					AdministrativePersonnel: GD(rows, 40, 133),
 				},
 			},
 		},
