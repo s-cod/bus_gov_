@@ -2,6 +2,7 @@ package main
 
 import (
 	"bus_gov_go/pkg/bs"
+	"bus_gov_go/pkg/cs"
 	"bus_gov_go/pkg/fhd"
 	"bus_gov_go/pkg/rd"
 	"fmt"
@@ -20,6 +21,7 @@ func main() {
 		fmt.Println("--fhd	для конвертации планов ФХД")
 		fmt.Println("--bs	для конвертации Бюджетные средства")
 		fmt.Println("--rd	для конвертации Результаты деятельности")
+		fmt.Println("--cs	для конвертации Целевые средства")
 		return
 	}
 	var f func(string) error
@@ -33,6 +35,9 @@ func main() {
 	case "--rd":
 		fmt.Println("Начинаем обрабатывать xls файлы Результаты деятельности")
 		f = rd.ProcessFile
+	case "--cs":
+		fmt.Println("Начинаем обрабатывать xls файлы Целевые средства")
+		f = cs.ProcessFile
 	default:
 		fmt.Println("не верные параметры обработки")
 		return

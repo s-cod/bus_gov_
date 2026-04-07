@@ -12,7 +12,7 @@ type ReportActivityResult struct {
 
 type Header struct {
 	Xmlns          string `xml:"xmlns,attr"`
-	Id             string `xml:"id"`
+	ID             string `xml:"id"`
 	CreateDateTime string `xml:"createDateTime"`
 }
 
@@ -21,7 +21,7 @@ type Body struct {
 }
 type Position struct {
 	XMLName           xml.Name `xml:"position"`
-	PositionId        string   `xml:"ns2:positionId"`
+	PositionID        string   `xml:"ns2:positionId"`
 	ChangeDate        string   `xml:"ns2:changeDate"`
 	Placer            Placer
 	Initiator         Initiator

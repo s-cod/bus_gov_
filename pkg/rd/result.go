@@ -97,10 +97,12 @@ func ProcessFile(filePath string) error {
 		SignerDetailsType: "PAYMENTS_AND_RECEIPTS",
 	}
 
+	// =====================================
+	// Сведения о поступлениях и выплатах
+	// =====================================
+	rows, err = f.GetRows("Лист2-3")
 	receipts := make([]Receipts, 0)
 	payments := make([]Payments, 0)
-
-	rows, err = f.GetRows("Лист2-3")
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
@@ -157,6 +159,9 @@ func ProcessFile(filePath string) error {
 		})
 	}
 
+	// ===============================================
+	// Сведения о численности и оплате труда
+	// ===============================================
 	receiptsAndPayments := ReceiptsAndPayments{
 		Receipts: receipts,
 		Payments: payments,
@@ -271,6 +276,10 @@ func ProcessFile(filePath string) error {
 			},
 		}
 	}
+
+	// ===============================================
+	// Сведения о кредиторской задолженности
+	// ===============================================
 	rows, err = f.GetRows("Лист8")
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
