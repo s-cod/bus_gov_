@@ -12,9 +12,13 @@ import (
 	"github.com/xuri/excelize/v2"
 )
 
-func getFinLen(s [][]string, r, c int) string {
-	if r < 1 || c < 1 {
-		panic("неверные параметры ячейки")
+func GD(s [][]string, r, c int) string {
+	if r == 0 || c == 0 {
+		r, err := fmt.Printf("неверный диапазон ячеек row:%v col:%v", r, c)
+		if err != nil {
+			panic(err.Error())
+		}
+		panic(r)
 	}
 	r -= 1
 	c -= 1
@@ -22,12 +26,12 @@ func getFinLen(s [][]string, r, c int) string {
 	if len(s[r]) < c {
 		return "0.00"
 	}
-
 	if s[r][c] == "" {
 		return "0.00"
 	}
 
-	result := strings.ReplaceAll(s[r][c], ",", "")
+	tmp := strings.Trim(s[r][c], " ")
+	result := strings.ReplaceAll(tmp, ",", "")
 	return result
 }
 
@@ -40,12 +44,12 @@ func ProcessFile(filePath string) error {
 	currentTime := time.Now().Format("2006-01-02T15:04:05")
 
 	// year := currentTime[0:4]
-	rows, err := f.GetRows("Результат")
+	rows, err := f.GetRows("Лист1")
 
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
-	year := getFinLen(rows, 15, 16)[6:]
+	year := GD(rows, 15, 16)[6:]
 
 	outputFile := fmt.Sprintf("./out/%s.xml", strings.TrimSuffix(filepath.Base(filePath), filepath.Ext(filePath)))
 	file, err := os.Create(outputFile)
@@ -67,16 +71,21 @@ func ProcessFile(filePath string) error {
 	}
 
 	for i := 28; i < 35; i++ {
-		if getFinLen(rows, i, 1) == "0.00" {
+
+		if GD(rows, i, 1) == "Всего" {
 			break
 		}
 
+		if GD(rows, i, 14) == "0.00" {
+			continue
+		}
+
 		position.OtherGrantFunds = append(position.OtherGrantFunds, OtherGrantFunds{
-			Name:  getFinLen(rows, i, 1),
-			Funds: getFinLen(rows, i, 14),
-			Code:  getFinLen(rows, i, 2),
+			Name:  GD(rows, i, 1),
+			Funds: GD(rows, i, 14),
+			Code:  GD(rows, i, 2),
 			Kosgu: Kosgu{
-				Code: getFinLen(rows, i, 3),
+				Code: GD(rows, i, 3),
 			},
 		})
 	}
