@@ -8,6 +8,7 @@ import (
 
 // GetString получение значения ячейки из rows xlsx
 func GetString(s [][]string, r, c int) string {
+
 	if r == 0 || c == 0 {
 		r, err := fmt.Printf("неверный диапазон ячеек row:%v col:%v", r, c)
 		if err != nil {
@@ -18,7 +19,8 @@ func GetString(s [][]string, r, c int) string {
 	r -= 1
 	c -= 1
 
-	if len(s[r]) < c || s[r][c] == "" {
+	l := len(s[r])
+	if l == 0 || l < c+1 || s[r][c] == "" {
 		return ""
 	}
 
