@@ -1,3 +1,4 @@
+// Package rd формирования файлов для отчеты Резултаты дечтельности
 package rd
 
 import (
@@ -17,7 +18,7 @@ func getFloat(s string) string {
 	if s == "" {
 		return "0.00"
 	}
-	result := strings.Replace(s, ",", "", -1)
+	result := strings.ReplaceAll(s, ",", "")
 	return result
 }
 
@@ -28,7 +29,7 @@ func getFinLen(s []string, i int) string {
 	if s[i] == "" {
 		return "0.00"
 	}
-	result := strings.Replace(s[i], ",", "", -1)
+	result := strings.ReplaceAll(s[i], ",", "")
 	return result
 }
 

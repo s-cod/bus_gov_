@@ -1,3 +1,4 @@
+// Package bs формирование файлов для отчеты Бюджетные смета
 package bs
 
 import (
@@ -41,7 +42,6 @@ func ProcessFile(filePath string) error {
 	for i, row := range rows { // Диапазон B85:S100
 
 		if len(row) > 3 {
-
 			if row[1] == "Наименование показателя" {
 				start = i + 5
 				break

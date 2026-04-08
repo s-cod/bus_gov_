@@ -1,3 +1,4 @@
+// Package utils вспомогательные функции
 package utils
 
 import (
@@ -5,8 +6,8 @@ import (
 	"strings"
 )
 
-// GetData получение значения ячейки из rows xlsx
-func GetData(s [][]string, r, c int) string {
+// GetString получение значения ячейки из rows xlsx
+func GetString(s [][]string, r, c int) string {
 	if r == 0 || c == 0 {
 		r, err := fmt.Printf("неверный диапазон ячеек row:%v col:%v", r, c)
 		if err != nil {
@@ -17,14 +18,19 @@ func GetData(s [][]string, r, c int) string {
 	r -= 1
 	c -= 1
 
-	if len(s[r]) < c {
-		return "0.00"
-	}
-	if s[r][c] == "" {
-		return "0.00"
+	if len(s[r]) < c || s[r][c] == "" {
+		return ""
 	}
 
-	tmp := strings.Trim(s[r][c], " ")
-	result := strings.ReplaceAll(tmp, ",", "")
-	return result
+	return strings.Trim(s[r][c], " ")
+}
+
+// GetDigit получение значения ячейки из rows xlsx
+// с удалением запятых в числовых значениях
+func GetDigit(s [][]string, r, c int) string {
+	result := GetString(s, r, c)
+	if result == "" {
+		return "0.00"
+	}
+	return strings.ReplaceAll(result, ",", "")
 }

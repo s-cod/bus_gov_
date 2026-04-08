@@ -1,3 +1,4 @@
+// Package fhd формирование файлов для отчета План Финансово Ходяйственной деятельности
 package fhd
 
 import (
@@ -17,7 +18,7 @@ func getFloat(s string) string {
 	if s == "" {
 		return "0.00"
 	}
-	result := strings.Replace(s, ",", "", -1)
+	result := strings.ReplaceAll(s, ",", "")
 	return result
 }
 
@@ -134,7 +135,7 @@ func ProcessFile(filePath string) error {
 		planPaymentTRU := PlanPaymentTRU{
 			Name:      row[1],
 			LineCode:  row[2],
-			YearStart: YearStart, //TODO
+			YearStart: YearStart, // TODO
 			Sum: Sum{
 				FinancialYearSum: getFloat(row[5]),
 				PlanFirstYearSum: getFloat(row[6]),

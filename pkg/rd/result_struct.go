@@ -80,7 +80,7 @@ type Result struct {
 	OpenedCreditAccounts        OpenedCreditAccounts
 }
 
-// Сведения о поступлениях и выплатах учреждения
+// ReceiptsAndPayments Сведения о поступлениях и выплатах учреждения
 type ReceiptsAndPayments struct {
 	XMLName  xml.Name `xml:"receiptsAndPayments"`
 	Receipts []Receipts
@@ -121,13 +121,13 @@ type Payments struct {
 	PaymentsTotalShare20                  string   `xml:"paymentsTotalShare20"`
 }
 
-// Сведения об оказываемых услугах, выполняемых работах сверх установленного
+// NonFinancialAssetsChange Сведения об оказываемых услугах, выполняемых работах сверх установленного
 // государственного (муниципального) задания, а также выпускаемой продукции»
 type NonFinancialAssetsChange struct {
 	XMLName xml.Name `xml:"nonFinancialAssetsChange"`
 }
 
-// Сведения о кредиторской задолженности и обязательствах учреждения
+// CreditPayment Сведения о кредиторской задолженности и обязательствах учреждения
 type CreditPayment struct {
 	XMLName                                    xml.Name `xml:"creditPayment"`
 	Name                                       string   `xml:"name"`
@@ -148,13 +148,13 @@ type CreditPayment struct {
 	AmountDeferredOther                        string   `xml:"amountDeferredOther"`
 }
 
-//  Сведения о численности сотрудников и оплате
+// NumberEmployeesRemuneration Сведения о численности сотрудников и оплате
 type NumberEmployeesRemuneration struct {
 	XMLName                           xml.Name `xml:"numberEmployeesRemuneration"`
 	NumberEmployeesRemunerationGroups []NumberEmployeesRemunerationGroups
 }
 
-// Сведения о численности и оплате труда по
+// NumberEmployeesRemunerationGroups Сведения о численности и оплате труда по
 type NumberEmployeesRemunerationGroups struct {
 	XMLName    xml.Name `xml:"numberEmployeesRemunerationGroups"`
 	GroupStaff GroupStaff
@@ -169,7 +169,7 @@ type GroupStaff struct {
 	LineCode string   `xml:"lineCode"`
 }
 
-//ведения о численности и оплате труда по
+// NumberEmployeesRemunerationGroup ведения о численности и оплате труда по
 // группам сотрудников
 type NumberEmployeesRemunerationGroup struct {
 	XMLName    xml.Name `xml:"numberEmployeesRemunerationGroup"`
@@ -313,7 +313,7 @@ type CreditAccountsCurrency struct {
 	XMLName xml.Name `xml:"CreditAccountsRF"`
 }
 
-// сведения о имуществе
+// AssetsUse сведения о имуществе
 type AssetsUse struct {
 	XMLName                 xml.Name `xml:"assetsUse"`
 	Xmlns                   string   `xml:"xmlns,attr"`
@@ -323,7 +323,7 @@ type AssetsUse struct {
 	Vehicles                Vehicles
 }
 
-// Сведения о недвижимом имуществе, за исключение м земельных  участков,
+// EstateExceptLand Сведения о недвижимом имуществе, за исключение м земельных  участков,
 // закрепленно м на праве оперативног о управления
 type EstateExceptLand struct {
 	XMLName                 xml.Name `xml:"estateExceptLand"`
@@ -398,7 +398,7 @@ type PropertyTax struct {
 	UnusedProperty    string   `xml:"unusedProperty"`
 }
 
-// Сведения о земельных участках, предоставленных на праве постоянного
+// LandPermanentUse Сведения о земельных участках, предоставленных на праве постоянного
 // (бессрочного ) пользования
 type LandPermanentUse struct {
 	XMLName       xml.Name `xml:"landPermanentUse"`
@@ -448,7 +448,7 @@ type ExpensesForLand struct {
 	LandTax     string   `xml:"landTax"`
 }
 
-// Сведения об особо ценном движимом имуществе
+// ValuableMovableProperty Сведения об особо ценном движимом имуществе
 // (за исключение м транспортны х средств)
 type ValuableMovableProperty struct {
 	XMLName                        xml.Name `xml:"valuableMovableProperty"`
@@ -619,9 +619,6 @@ type VehiclesExpensesMaintenance struct {
 	AdministrativePersonnel string   `xml:"administrativePersonnel"`
 }
 
-// ==============================
-// ==============================
-// ==============================
 type ValuableMovablePropertyObjects struct {
 	XMLName                       xml.Name `xml:"valuableMovablePropertyObjects"`
 	TypeMovableObject             TypeMovableObject

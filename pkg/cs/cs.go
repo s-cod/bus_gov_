@@ -1,7 +1,7 @@
+// Package cs формирования данных по отчету Целевые средства
 package cs
 
 import (
-	"bus_gov_go/pkg/utils"
 	"encoding/xml"
 	"fmt"
 	"os"
@@ -9,12 +9,15 @@ import (
 	"strings"
 	"time"
 
+	"bus_gov_go/pkg/utils"
+
 	"github.com/google/uuid"
 	"github.com/xuri/excelize/v2"
 )
 
 func ProcessFile(filePath string) error {
-	GD := utils.GetData
+	GD := utils.GetDigit
+	GS := utils.GetString
 
 	f, err := excelize.OpenFile(filePath) //, excelize.Options{RawCellValue: true})
 	if err != nil {
@@ -25,18 +28,10 @@ func ProcessFile(filePath string) error {
 
 	// year := currentTime[0:4]
 	rows, err := f.GetRows("Лист1")
-
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
 	year := GD(rows, 15, 16)[6:]
-
-	outputFile := fmt.Sprintf("./out/%s.xml", strings.TrimSuffix(filepath.Base(filePath), filepath.Ext(filePath)))
-	file, err := os.Create(outputFile)
-	if err != nil {
-		return fmt.Errorf("не удалось создать файл: %w", err)
-	}
-	defer file.Close()
 
 	position := Position{
 		PositionID:    uuid.New().String(),
@@ -61,11 +56,11 @@ func ProcessFile(filePath string) error {
 		}
 
 		position.OtherGrantFunds = append(position.OtherGrantFunds, OtherGrantFunds{
-			Name:  GD(rows, i, 1),
+			Name:  GS(rows, i, 1),
 			Funds: GD(rows, i, 14),
-			Code:  GD(rows, i, 2),
+			Code:  GS(rows, i, 2),
 			Kosgu: Kosgu{
-				Code: GD(rows, i, 3),
+				Code: GS(rows, i, 3),
 			},
 		})
 	}
@@ -84,7 +79,16 @@ func ProcessFile(filePath string) error {
 		},
 	}
 
+	// ==========================================
+
 	// Записываем заголовок XML вручную
+	outputFile := fmt.Sprintf("./out/%s.xml", strings.TrimSuffix(filepath.Base(filePath), filepath.Ext(filePath)))
+	file, err := os.Create(outputFile)
+	if err != nil {
+		return fmt.Errorf("не удалось создать файл: %w", err)
+	}
+	defer file.Close()
+
 	if _, err := file.Write([]byte(`<?xml version="1.0" encoding="utf-8"?>` + "\n")); err != nil {
 		return fmt.Errorf("не удалось записать заголовок XML: %w", err)
 	}
