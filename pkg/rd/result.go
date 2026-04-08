@@ -1,4 +1,4 @@
-// Package rd формирования файлов для отчеты Резултаты дечтельности
+// Package rd формирование отчета о результатах деятельности
 package rd
 
 import (
@@ -38,14 +38,21 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось открыть файл: %w", err)
 	}
-	defer f.Close()
+	defer func() {
+		if err := f.Close(); err != nil {
+			panic(err.Error())
+		}
+	}()
+
 	currentTime := time.Now().Format("2006-01-02T15:04:05")
 	year := currentTime[0:4]
-	rows, err := f.GetRows("Лист1")
+	rows, err := f.GetRows("Состав сведений")
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
+
 	OKTMO := rows[24][86]
+
 	position := Position{
 		PositionID: uuid.New().String(),
 		ChangeDate: currentTime,
@@ -98,12 +105,10 @@ func ProcessFile(filePath string) error {
 		SignerDetailsType: "PAYMENTS_AND_RECEIPTS",
 	}
 
-	// =====================================
-	// Сведения о поступлениях и выплатах
-	// =====================================
-	rows, err = f.GetRows("Лист2-3")
 	receipts := make([]Receipts, 0)
 	payments := make([]Payments, 0)
+
+	rows, err = f.GetRows("Лист2-3")
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
@@ -129,8 +134,6 @@ func ProcessFile(filePath string) error {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
 
-	// TODO заполнить в цикле
-	for i := 14; i < 67; i++ {
 		if len(rows[i]) < 19 {
 			continue
 		}
@@ -686,11 +689,6 @@ func ProcessFile(filePath string) error {
 		Xmlns:                   "http://bus.gov.ru/types/1",
 		EstateExceptLand:        estateExceptLand,
 		LandPermanentUse:        landPermanentUse,
-		ValuableMovableProperty: valuableMovableProperty,
-		Vehicles:                vehicles,
-	}
-
-	doc := ReportActivityResult{
 		Xmlns:    "http://bus.gov.ru/external/1",
 		XmlnsNs2: "http://bus.gov.ru/types/1",
 
@@ -709,7 +707,12 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось создать файл: %w", err)
 	}
-	defer file.Close()
+
+	defer func() {
+		if err := f.Close(); err != nil {
+			panic(err.Error())
+		}
+	}()
 
 	// Записываем заголовок XML вручную
 	if _, err := file.Write([]byte(`<?xml version="1.0" encoding="utf-8"?>` + "\n")); err != nil {
