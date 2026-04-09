@@ -378,7 +378,7 @@ func ProcessFile(filePath string) error {
 		if tmp {
 			actualExpenses = actualExpensesNull
 		}
-		estateObject = append(estateObject, EstateObject{
+		e := EstateObject{
 			Name:      Gs(R, i, 1),
 			Address:   Gs(R, i, 18),
 			CadNumber: Gs(R, i, 33),
@@ -387,7 +387,7 @@ func ProcessFile(filePath string) error {
 				Name: "Name",
 			},
 			UniqueObjectCode: strconv.Itoa(i),
-			BuildingYear:     Gs(R, i, 56),
+
 			Unit: Unit{
 				Code:   Gs(R, i, 69),
 				Symbol: Gs(R, i, 61),
@@ -403,7 +403,12 @@ func ProcessFile(filePath string) error {
 				OtherPurpose:        Gd(R, i, 103),
 			},
 			ActualExpenses: actualExpenses,
-		})
+		}
+		if Gs(R, i, 56) != "" {
+			e.BuildingYear = Gs(R, i, 56)
+		}
+
+		estateObject = append(estateObject, e)
 		tmp = true
 	}
 
@@ -432,7 +437,7 @@ func ProcessFile(filePath string) error {
 		if Gs(R, i, 1) == "" {
 			break
 		}
-		// fmt.Println(Gs(R, i, 42))
+		// fmt.Println(Gs(R, i, 1))
 		lendObject = append(lendObject, LendObject{
 			Name:    Gs(R, i, 1),
 			Address: Gs(R, i, 15),

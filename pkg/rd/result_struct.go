@@ -347,7 +347,7 @@ type EstateObject struct {
 	CadNumber        string   `xml:"cadNumber"`
 	Oktmo            Oktmo
 	UniqueObjectCode string `xml:"uniqueObjectCode"`
-	BuildingYear     string `xml:"buildingYear"`
+	BuildingYear     string `xml:"buildingYear,omitempty"`
 	Unit             Unit
 	TypeObject       TypeObject
 	Used             Used
