@@ -188,7 +188,7 @@ func ProcessFile(filePath string) error {
 				StaffingStartYear: StaffingStartYear{
 					StaffingTotal: Gd(R, s11[i], 28),
 					StaffingBase:  Gd(R, s11[i], 36),
-					Replaced:      Gd(R, s11[i], 44),
+					Replaced:      Gd(R, s11[i], 36),
 					Vacancy:       Gd(R, s11[i], 51),
 				},
 				AverageOfYear: AverageOfYear{
@@ -205,7 +205,7 @@ func ProcessFile(filePath string) error {
 				StaffingEndYear: StaffingEndYear{
 					StaffingTotal: Gd(R, s11[i], 112),
 					StaffingBase:  Gd(R, s11[i], 120),
-					Replaced:      Gd(R, s11[i], 128),
+					Replaced:      Gd(R, s11[i], 120),
 					Vacancy:       Gd(R, s11[i], 135),
 				},
 			},
@@ -373,8 +373,7 @@ func ProcessFile(filePath string) error {
 		if len(R[i-1]) < 87 {
 			continue
 		}
-		// fmt.Println(R[i-1], len(R[i-1]))
-		// fmt.Println(R[i-1], Gs(R, i, 1), i)
+
 		if tmp {
 			actualExpenses = actualExpensesNull
 		}
@@ -434,7 +433,9 @@ func ProcessFile(filePath string) error {
 	lendObject := []LendObject{}
 
 	for i := 27; i < 33; i++ {
+
 		if Gs(R, i, 1) == "" {
+			// fmt.Printf("=%v=\n", Gs(R, i, 1))
 			break
 		}
 		// fmt.Println(Gs(R, i, 1))
@@ -476,8 +477,11 @@ func ProcessFile(filePath string) error {
 			},
 		})
 	}
+	// if len(lendObject) > 0 {
+	// 	position.AssetsUse.LandPermanentUse = landPermanentUse
+	// }
 
-	landPermanentUse := LandPermanentUse{
+	landPermanentUse := &LandPermanentUse{
 		LendObject: lendObject,
 		LendObjectUse: LendObjectUse{
 			LineCode: "9000",
@@ -682,11 +686,14 @@ func ProcessFile(filePath string) error {
 	}
 
 	position.AssetsUse = AssetsUse{
-		Xmlns:                   "http://bus.gov.ru/types/1",
-		EstateExceptLand:        estateExceptLand,
-		LandPermanentUse:        landPermanentUse,
+		Xmlns:            "http://bus.gov.ru/types/1",
+		EstateExceptLand: estateExceptLand,
+		// LandPermanentUse:        landPermanentUse,
 		ValuableMovableProperty: valuableMovableProperty,
 		Vehicles:                vehicles,
+	}
+	if len(lendObject) > 0 {
+		position.AssetsUse.LandPermanentUse = landPermanentUse
 	}
 
 	doc := ReportActivityResult{

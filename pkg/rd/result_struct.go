@@ -318,7 +318,7 @@ type AssetsUse struct {
 	XMLName                 xml.Name `xml:"assetsUse"`
 	Xmlns                   string   `xml:"xmlns,attr"`
 	EstateExceptLand        EstateExceptLand
-	LandPermanentUse        LandPermanentUse
+	LandPermanentUse        *LandPermanentUse `xml:"landPermanentUse,omitempty"`
 	ValuableMovableProperty ValuableMovableProperty
 	Vehicles                Vehicles
 }
@@ -401,7 +401,7 @@ type PropertyTax struct {
 // LandPermanentUse Сведения о земельных участках, предоставленных на праве постоянного
 // (бессрочного ) пользования
 type LandPermanentUse struct {
-	XMLName       xml.Name `xml:"landPermanentUse"`
+	// XMLName       xml.Name `xml:"landPermanentUse,omitempty"`
 	LendObject    []LendObject
 	LendObjectUse LendObjectUse
 }
