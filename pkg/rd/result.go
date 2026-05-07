@@ -78,11 +78,13 @@ func ProcessFile(filePath string) error {
 		Kpp:      "550101001",
 	}
 
+	fio := utils.Capitalize(Gs(R, 49, 54))
+
 	position.SignerDetails = SignerDetails{
 		Xmlns:             "http://bus.gov.ru/types/1",
-		ManagerName:       Gs(R, 49, 54),
+		ManagerName:       fio,
 		ManagerPosition:   Gs(R, 49, 15),
-		ExecutorName:      Gs(R, 49, 54),
+		ExecutorName:      fio,
 		ExecutorPosition:  Gs(R, 49, 15),
 		Phone:             " ",
 		SignDate:          currentTime[:10],

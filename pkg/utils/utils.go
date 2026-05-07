@@ -36,3 +36,13 @@ func GetDigit(s [][]string, r, c int) string {
 	}
 	return strings.ReplaceAll(result, ",", "")
 }
+
+func Capitalize(s string) string {
+	fio := strings.Split(strings.Trim(strings.ToLower(s), " "), " ")
+	for i := range fio {
+		res := []rune(fio[i])
+		fio[i] = strings.ToUpper(string(res[0])) + string(res[1:])
+	}
+	result := strings.Join(fio, " ")
+	return result
+}
