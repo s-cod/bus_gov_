@@ -36,3 +36,24 @@ func GetDigit(s [][]string, r, c int) string {
 	}
 	return strings.ReplaceAll(result, ",", "")
 }
+
+func Capitalize(s string) string {
+	fio := strings.Split(strings.Trim(strings.ToLower(s), " "), " ")
+	for i := range fio {
+		res := []rune(fio[i])
+		fio[i] = strings.ToUpper(string(res[0])) + string(res[1:])
+	}
+	result := strings.Join(fio, " ")
+	return result
+}
+
+// AllIf сравнивает все значения среза (ar) со значением (v)
+func AllIf[T comparable](ar []T, v T) bool {
+	result := true
+	for _, s := range ar {
+		if s != v {
+			result = false
+		}
+	}
+	return result
+}

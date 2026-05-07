@@ -324,7 +324,7 @@ type AssetsUse struct {
 }
 
 // EstateExceptLand Сведения о недвижимом имуществе, за исключение м земельных  участков,
-// закрепленно м на праве оперативног о управления
+// закреплено м на праве оперативного управления
 type EstateExceptLand struct {
 	XMLName                 xml.Name `xml:"estateExceptLand"`
 	EstateExceptLandObjects EstateExceptLandObjects

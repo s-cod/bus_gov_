@@ -78,11 +78,13 @@ func ProcessFile(filePath string) error {
 		Kpp:      "550101001",
 	}
 
+	fio := utils.Capitalize(Gs(R, 49, 54))
+
 	position.SignerDetails = SignerDetails{
 		Xmlns:             "http://bus.gov.ru/types/1",
-		ManagerName:       Gs(R, 49, 54),
+		ManagerName:       fio,
 		ManagerPosition:   Gs(R, 49, 15),
-		ExecutorName:      Gs(R, 49, 54),
+		ExecutorName:      fio,
 		ExecutorPosition:  Gs(R, 49, 15),
 		Phone:             " ",
 		SignDate:          currentTime[:10],
@@ -153,7 +155,6 @@ func ProcessFile(filePath string) error {
 	// ===============================================
 
 	receiptsAndPayments := ReceiptsAndPayments{
-
 		Receipts: receipts,
 		Payments: payments,
 	}
@@ -279,7 +280,13 @@ func ProcessFile(filePath string) error {
 	creditPayment := []CreditPayment{}
 	// fmt.Println(len(rows[25]))
 	for i := 25; i < 48; i++ {
-		if Gd(R, i, 44) == "0.00" && Gd(R, i, 51) == "0.00" && Gd(R, i, 58) == "0.00" && Gd(R, i, 65) == "0.00" && Gd(R, i, 72) == "0.00" {
+		// if Gd(R, i, 44) == "0.00" &&
+		// 	Gd(R, i, 51) == "0.00" &&
+		// 	Gd(R, i, 58) == "0.00" &&
+		// 	Gd(R, i, 65) == "0.00" &&
+		// 	Gd(R, i, 73) == "0.00" {
+		ar := []string{Gd(R, i, 44), Gd(R, i, 51), Gd(R, i, 58), Gd(R, i, 65), Gd(R, i, 73)}
+		if utils.AllIf(ar, "0.00") {
 			continue
 		}
 
@@ -316,6 +323,7 @@ func ProcessFile(filePath string) error {
 			CreditAccountsCurrency: "",
 		},
 	}
+
 	// ===================================
 	// Сведения о недвижимом имуществе
 	// ===================================
@@ -364,12 +372,12 @@ func ProcessFile(filePath string) error {
 		},
 		Total: "0",
 	}
+
 	estateObject := []EstateObject{}
 
 	tmp := false
 
 	for i := 26; i < 40; i++ {
-
 		if len(R[i-1]) < 87 {
 			continue
 		}
@@ -433,7 +441,6 @@ func ProcessFile(filePath string) error {
 	lendObject := []LendObject{}
 
 	for i := 27; i < 33; i++ {
-
 		if Gs(R, i, 1) == "" {
 			// fmt.Printf("=%v=\n", Gs(R, i, 1))
 			break
@@ -477,6 +484,7 @@ func ProcessFile(filePath string) error {
 			},
 		})
 	}
+
 	// if len(lendObject) > 0 {
 	// 	position.AssetsUse.LandPermanentUse = landPermanentUse
 	// }
@@ -692,6 +700,7 @@ func ProcessFile(filePath string) error {
 		ValuableMovableProperty: valuableMovableProperty,
 		Vehicles:                vehicles,
 	}
+
 	if len(lendObject) > 0 {
 		position.AssetsUse.LandPermanentUse = landPermanentUse
 	}
