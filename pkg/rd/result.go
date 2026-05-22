@@ -2,7 +2,6 @@
 package rd
 
 import (
-	"bus_gov_go/pkg/utils"
 	"encoding/xml"
 	"fmt"
 	"os"
@@ -10,6 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"bus_gov_go/pkg/utils"
 
 	"github.com/google/uuid"
 	"github.com/xuri/excelize/v2"
@@ -55,7 +56,7 @@ func ProcessFile(filePath string) error {
 		ConfirmDate:       currentTime[:10],
 		// Result            Result
 		// AssetsUse: AssetsUse{
-		// 	Xmlns: "http://bus.gov.ru/types/1",
+		// Xmlns: "http://bus.gov.ru/types/1",
 		// },
 		EffectiveActivity: EffectiveActivity{
 			Xmlns: "http://bus.gov.ru/types/1",
@@ -278,13 +279,7 @@ func ProcessFile(filePath string) error {
 	}
 
 	creditPayment := []CreditPayment{}
-	// fmt.Println(len(rows[25]))
 	for i := 25; i < 48; i++ {
-		// if Gd(R, i, 44) == "0.00" &&
-		// 	Gd(R, i, 51) == "0.00" &&
-		// 	Gd(R, i, 58) == "0.00" &&
-		// 	Gd(R, i, 65) == "0.00" &&
-		// 	Gd(R, i, 73) == "0.00" {
 		ar := []string{Gd(R, i, 44), Gd(R, i, 51), Gd(R, i, 58), Gd(R, i, 65), Gd(R, i, 73)}
 		if utils.AllIf(ar, "0.00") {
 			continue
