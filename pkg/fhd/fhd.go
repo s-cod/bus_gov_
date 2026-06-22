@@ -23,6 +23,8 @@ func getFloat(s string) string {
 }
 
 func ProcessFile(filePath string) error {
+	// getFloat := utils.GetDigit
+
 	f, err := excelize.OpenFile(filePath) //, excelize.Options{RawCellValue: true})
 	if err != nil {
 		return fmt.Errorf("не удалось открыть файл: %w", err)

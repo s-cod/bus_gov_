@@ -23,7 +23,11 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось открыть файл: %w", err)
 	}
-	defer f.Close()
+	defer func() {
+		if err := f.Close(); err != nil {
+			panic(err.Error())
+		}
+	}()
 	currentTime := time.Now().Format("2006-01-02T15:04:05")
 
 	// year := currentTime[0:4]
@@ -46,6 +50,7 @@ func ProcessFile(filePath string) error {
 	}
 
 	for i := 28; i < 35; i++ {
+		// for i := range utils.MiRange(28, 35) {
 
 		if GD(rows, i, 1) == "Всего" {
 			break

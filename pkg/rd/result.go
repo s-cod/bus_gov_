@@ -120,6 +120,8 @@ func ProcessFile(filePath string) error {
 	if err != nil {
 		return fmt.Errorf("не удалось прочитать лист: %w", err)
 	}
+	// TODO: надо тестировать
+	// for _, i := range utils.MyRange(16, 69)
 
 	for i := 15; i < 69; i++ {
 		if Gs(R, i, 25) == "" {

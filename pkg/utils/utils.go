@@ -7,8 +7,8 @@ import (
 )
 
 // GetString получение значения ячейки из rows xlsx
+// в виде строки
 func GetString(s [][]string, r, c int) string {
-
 	if r == 0 || c == 0 {
 		r, err := fmt.Printf("неверный диапазон ячеек row:%v col:%v", r, c)
 		if err != nil {
@@ -28,7 +28,7 @@ func GetString(s [][]string, r, c int) string {
 }
 
 // GetDigit получение значения ячейки из rows xlsx
-// с удалением запятых в числовых значениях
+// с удалением запятых числовые значениях в виде строки
 func GetDigit(s [][]string, r, c int) string {
 	result := GetString(s, r, c)
 	if result == "" {
@@ -54,6 +54,19 @@ func AllIf[T comparable](ar []T, v T) bool {
 		if s != v {
 			result = false
 		}
+	}
+
+	return result
+}
+
+// MyRange функция создает срез со значениями от X до Y
+func MyRange(x, y int) []int {
+	l := y - x
+	idx := 0
+	result := make([]int, l)
+	for i := x; i < y; i++ {
+		result[idx] = i
+		idx++
 	}
 	return result
 }
